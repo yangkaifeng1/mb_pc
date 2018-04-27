@@ -1,0 +1,47 @@
+.recharge{
+	position: absolute;
+	top: 5px;
+	right: 53px;
+}
+
+.recharge:hover{
+	cursor: pointer;
+}
+
+.bf_fff ul.nav{
+	border-bottom: 0;
+	background: #e4e4e4;
+	height: 50px;
+	line-height: 50px;
+}
+
+.bf_fff ul.nav>li.active>a,
+.bf_fff ul.nav>li.active>a:focus,
+.bf_fff ul.nav>li.active>a:hover{
+	border-radius: 0;
+	border-top: 2px solid #f5a52f;
+	background: #fff;
+}
+
+.bf_fff ul.nav>li>a,
+.bf_fff ul.nav>li>a:focus,
+.bf_fff ul.nav>li>a:hover{
+	background: #e4e4e4;
+	border: 0;
+	margin-right: 0;
+	border-radius: 0;
+	border-top: 2px solid transparent;
+	font-size: 16px;
+	height: 100%;
+	line-height: 200%;
+}
+
+.bf_fff ul.nav>li{
+	height: 100%;
+}
+
+
+
+#send_log .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+	padding: 20px 8px !important;
+}

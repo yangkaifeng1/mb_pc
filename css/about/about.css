@@ -1,0 +1,134 @@
+/*<!-- 详细描述 -->*/
+.left_menu{
+    display: inline-block;
+    width: 192px;
+    vertical-align: top;
+}
+.left_menu .short.f_l{
+    width: 100%;
+    float: none;
+}
+.left_menu .short .tree .hd{
+    background: #f3943e;
+    color: #fff;
+    position: relative;
+}
+.hd .down_icon{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -8px;
+}
+.item_container{
+    display: none;
+}
+.left_menu .short .tree-box .tree .item{
+    padding-left: 0;
+}
+.des_right{
+    display: inline-block;
+    vertical-align: top;
+}
+.long.f_r{
+    display: none;
+}
+.long.f_r.show_long{
+    display: block;
+}
+
+.article_info .MsoNormal{
+    color:#333;
+    font-size:14px;
+    background:#ffffff;
+}
+.article_info .banner_box img{
+    width: 100%;
+}
+.article_info .MsoNormal .article_text{
+    color: #333;
+}   
+
+.article_title.f16.pt10 span{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    border-bottom: 2px solid #f3943e;
+    height: 50px;
+}
+
+#map_container{
+    width: 875px;
+    height: 500px;
+}
+
+.guide_bg{
+    background: #fff5eb;
+    background-image: url("../../images/about/bg_line.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 30px 0;
+}
+
+.guide_bg .step-item .img-box, .guide_bg .step-item .step-des{
+    display: inline-block;
+}
+
+.guide_bg .step-item{
+    width: 650px;
+    margin-bottom: 50px;
+}
+
+.guide_bg .step-item:nth-child(2n) .img-box{
+    float: right;
+}
+
+.guide_bg .step-item:nth-child(2n+1) .img-box{
+    float: left;
+}
+
+.guide_bg .step-item:nth-child(2n) .step-des{
+    float: left;
+}
+
+.guide_bg .step-item:nth-child(2n+1) .step-des{
+    float: right;
+}
+
+
+.guide_bg .step-item .step-des{
+    width: 450px;
+}
+
+.step-item .step-des .step-title{
+    font-size: 20px;
+    color: #333;
+}
+
+.step-item .step-des .step-content{
+    font-size: 14px;
+    color: #999;
+    margin: 15px 0;
+}
+
+.step-des .step-operate .reg-btn, .step-des .step-operate .ope-btn{
+    width: 128px;
+    height: 38px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+}
+
+.step-des .step-operate .reg-btn{
+    background: #fd2f39;
+}
+
+.step-des .step-operate .ope-btn{
+    background: #ffb15b;
+    margin-left: 10px;
+}
+.step-des .step-operate .ope-btn:hover, .step-des .step-operate .reg-btn:hover{
+    cursor: pointer;
+}

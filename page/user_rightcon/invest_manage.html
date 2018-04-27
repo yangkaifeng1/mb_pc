@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户投资管理</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user/user.css">
+    <link rel="stylesheet" type="text/css" href="../../css/date/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="../../css/pagination/pagination.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="../../js/pagination/pagination.js"></script>
+    <script src="../../js/util/moment.js"></script>
+    <script src="../../js/util/bootstrap-datetimepicker.js"></script>
+
+</head>
+<body>
+<div class="bf_fff">
+    <!-- 管理分类头部 -->
+    <ul class="nav nav-tabs">
+        <li>
+            <a href="#all_target" data-toggle="tab">
+                全部（<span>5</span>）
+            </a>
+        </li>
+        <li>
+            <a href="#investing_target" data-toggle="tab">
+                待满标（<span>5</span>）
+            </a>
+        </li>
+        <li>
+            <a href="#backing_target" data-toggle="tab">
+                待回款（<span>5</span>）
+            </a>
+        </li>
+        <li>
+            <a href="#backed_target" data-toggle="tab">已回款（<span>5</span>）</a>
+        </li>
+        <li>
+            <a href="#lost_target" data-toggle="tab">已流标（<span>5</span>）</a>
+        </li>
+    </ul>
+    <!-- 管理分类内容 -->
+    <div class="tab-content">
+        <!-- 全部标的 -->
+        <div class="tab-pane fade in active" id="all_target">
+            <div class="blank20"></div>
+
+
+            <!-- 交易时间查询 -->
+            <div class="search_contianer pl30">
+                <form class="form-inline pl30" id="search_target1" >
+                    <div class="dis_ib">交易时间：</div>
+
+                    <!-- 时间选择器 -->
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' class="form-control start_time" name="start_time"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker2'>
+                            <input type='text' class="form-control end_time" name="end_time"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <button id="submit" type="button" class="btn theme_bg f_white">查询</button>
+                </form>
+            </div>
+
+            <div class="blank20"></div>
+
+            <div>
+                <table class="table tc f_333">
+                    <thead>
+                    <tr class="tc">
+                        <th class="tc">交易时间</th>
+                        <th class="tc">项目名称</th>
+                        <th class="tc">期限</th>
+                        <th class="tc">出借金额（元）</th>
+                        <th class="tc">优惠券</th>
+                        <th class="tc">到期本息（元）</th>
+                        <th class="tc">回款时间</th>
+                        <th class="tc">回款状态</th>
+                        <th class="tc">电子合同</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2018-04-10 <br> 23:48:52</td>
+                        <td>大众质押 <br> 2018030507</td>
+                        <td>15天</td>
+                        <td>1,000.00</td>
+                        <td>5元红包</td>
+                        <td>1,010.00</td>
+                        <td>-</td>
+                        <td class="f_40ad57">待满标</td>
+                        <td><span class="glyphicon glyphicon-list-alt"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2018-04-10 <br> 23:48:52</td>
+                        <td>大众质押 <br> 2018030507</td>
+                        <td>15天</td>
+                        <td>1,000.00</td>
+                        <td>5元红包</td>
+                        <td>1,010.00</td>
+                        <td>-</td>
+                        <td class="f_40ad57">待满标</td>
+                        <td><span class="glyphicon glyphicon-list-alt"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2018-04-10 <br> 23:48:52</td>
+                        <td>大众质押 <br> 2018030507</td>
+                        <td>15天</td>
+                        <td>1,000.00</td>
+                        <td>5元红包</td>
+                        <td>1,010.00</td>
+                        <td>-</td>
+                        <td class="f_40ad57">待满标</td>
+                        <td><span class="glyphicon glyphicon-list-alt"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2018-04-10 <br> 23:48:52</td>
+                        <td>大众质押 <br> 2018030507</td>
+                        <td>15天</td>
+                        <td>1,000.00</td>
+                        <td>5元红包</td>
+                        <td>1,010.00</td>
+                        <td>-</td>
+                        <td class="f_40ad57">待满标</td>
+                        <td><span class="glyphicon glyphicon-list-alt"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2018-04-10 <br> 23:48:52</td>
+                        <td>大众质押 <br> 2018030507</td>
+                        <td>15天</td>
+                        <td>1,000.00</td>
+                        <td>5元红包</td>
+                        <td>1,010.00</td>
+                        <td>2018-04-10</td>
+                        <td>已回款</td>
+                        <td><span class="glyphicon glyphicon-list-alt"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2018-04-10 <br> 23:48:52</td>
+                        <td>大众质押 <br> 2018030507</td>
+                        <td>15天</td>
+                        <td>1,000.00</td>
+                        <td>5元红包</td>
+                        <td>1,010.00</td>
+                        <td>2018-04-10</td>
+                        <td class="f_e20000">已流标</td>
+                        <td><span class="glyphicon glyphicon-list-alt"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 分页 -->
+            <div class="pagenation_container f_r">
+                <p id="testPage_target1" style="height: 28px;"></p>
+            </div>
+            <div class="blank20"></div>
+        </div>
+
+        <!-- 待满标 -->
+        <div class="tab-pane fade" id="danger_control">
+        </div>
+
+        <!-- 待还款 -->
+        <div class="tab-pane fade pl30 pr30 f_333 fz_14" id="send_log">
+        </div>
+
+        <!-- 已还款 -->
+        <div class="tab-pane fade pl30 pr30" id="back_log">
+
+        </div>
+
+        <!-- 已流标 -->
+        <div class="tab-pane fade pl30 pr30" id="back_log">
+
+        </div>
+    </div>
+
+    <!--分页选择器-->
+    <div class="pagenation_container f_r">
+        <p id="testPage" style="height: 28px;" />
+    </div>
+</div>
+
+<script type="text/javascript">
+    var targetStatus = getUrl('dealStatus')
+    console.log(targetStatus)
+    if (targetStatus) {
+        $('.nav.nav-tabs li').removeClass('active')
+        $("[href=#"+targetStatus+"]").parents('li').addClass('active')
+    } else {
+        $('.nav.nav-tabs li').eq(0).addClass('active')
+    }
+
+    // 页面当前页数
+    var currentPageId = 1;
+
+    // 时间选择器
+    $('#datetimepicker1').datetimepicker({
+        format: 'YYYY/MM/DD HH:mm:ss'
+    });
+    $('#datetimepicker2').datetimepicker({
+        format: 'YYYY/MM/DD HH:mm:ss'
+    });
+    $("#datetimepicker1").on("dp.change",function (e) {
+        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+    });
+    $("#datetimepicker2").on("dp.change",function (e) {
+        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+    });
+
+    // 搜索表单提交
+    $('#submit').click(function() {
+
+        var start_time = new Date($(".start_time").val()).getTime() || ''
+        var end_time = new Date($(".end_time").val()).getTime() || ''
+
+        var url  = location.href
+
+
+        if (/start_time/.test(url) || /end_time/.test(url)) {
+            url = deleteUrl(url, 'pageid')
+            if(start_time === '') {
+                url = deleteUrl(url, 'start_time')
+            } else {
+                url = changeUrl(url,'start_time', start_time)
+            }
+
+            if(end_time === '') {
+                url = deleteUrl(url, 'end_time')
+            } else {
+                url = changeUrl(url,'end_time', end_time)
+            }
+        } else {
+
+            if (start_time && end_time) {
+                if (/\?/.test(location.href)) {
+                    url = location.href + '&start_time=' + start_time + '&end_time=' + end_time
+                    console.log(url)
+                } else {
+                    url = location.href + '?start_time=' + start_time + '&end_time=' + end_time
+                    console.log(url)
+                }
+            } else if (start_time) {
+                if (/\?/.test(location.href)) {
+                    url = location.href + '&start_time=' + start_time
+                    console.log(url)
+                } else {
+                    url = location.href + '?start_time=' + start_time
+                    console.log(url)
+                }
+            } else if (end_time) {
+                if (/\?/.test(location.href)) {
+                    url = location.href + '&end_time=' + end_time
+                    console.log(url)
+                } else {
+                    url = location.href + '?end_time=' + end_time
+                    console.log(url)
+                }
+            }
+
+        }
+        url = deleteUrl(url, 'pageid')
+        window.location = url
+    });
+
+
+
+
+    if (/pageid/.test(location.href)) {
+        currentPageId = location.href.split('pageid=')[1].split(/\D/g)[0];
+    }
+    // 分页选择器
+    $('#testPage').pagination({
+        length: 1000,
+        every: 10,
+        current: currentPageId,
+        onClick: function(obj, current){
+            if (/pageid/.test(location.href)) {
+                window.location = changeUrl(location.href,'pageid', current)
+            } else {
+                if (/\?/.test(location.href)){
+                    window.location = location.href + '&pageid=' + current
+                } else {
+                    window.location = location.href + '?pageid=' + current
+                }
+            }
+        }
+
+    });
+
+    $(".nav li").click(function () {
+        var vals = $(this).children('a').attr('href').split('#')[1]
+
+        if (vals === 'all_target') {
+
+            debugger
+            window.location = location.href.split('?')[0]
+            return
+        }
+        var urls = location.href
+        urls = deleteUrl(urls, 'pageid')
+        urls = deleteUrl(urls, 'start_time')
+        urls = deleteUrl(urls, 'end_time')
+
+        if (/dealStatus/.test(urls)) {
+            window.location = changeUrl(urls,'dealStatus', vals)
+        } else {
+            if (/\?/.test(urls)){
+                window.location = urls + '&' +
+                    'dealStatus=' + vals
+            } else {
+                window.location = urls + '?dealStatus=' + vals
+            }
+        }
+    })
+
+    //url校验
+    //获取参数值 t：参数名
+    function getUrl(t){
+        var e = new RegExp("(^|&)"+t+"=([^&]*)(&|$)","i"),
+            i = window.location.search.substr(1).match(e);
+        return null!=i?decodeURI(i[2]):null
+    }
+
+    //改变参数  t：url  e：参数名 i: 参数值
+    function changeUrl(t, e, i){
+        var n=this, r=e+"=([^&]*)", a=e+"="+i, s=encodeURI(n.getUrl(e));
+        if (t.match(r)){
+            var t_search = t.split('?')[1]
+            var t_path = t.split('?')[0]
+            t_search = t_search.replace(s, i)
+            return t= t_path + '?' + t_search
+        } else {
+            if(t.match("[?]")){
+                return t+"&"+a
+            } else {
+                return t+"?"+a
+            }
+        }
+    }
+
+    //删除参数 t：url  e：参数名
+    function deleteUrl(t, e){
+        var n="";
+        if(t.indexOf("?")==-1)return t;
+        n=t.substr(t.indexOf("?")+1);
+        var r="", a="";
+        if(n.indexOf("&")!=-1){
+            r=n.split("&");
+            for(i in r)r[i].split("=")[0]!=e&&(a=a+r[i].split("=")[0]+"="+r[i].split("=")[1]+"&");
+            return t.substr(0, t.indexOf("?"))+"?"+a.substr(0, a.length-1)
+        }
+        return r=n.split("="), r[0]==e?t.substr(0, t.indexOf("?")):t
+    }
+</script>
+
+</body>
+</html>

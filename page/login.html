@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="renderer" content="webkit" />
+    <meta name="Generator"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>会员登录 - 满宝金服</title>
+    <meta name="keywords" content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融" />
+    <meta name="description" content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->      
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" >
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" >
+    <link rel="stylesheet" type="text/css" href="../css/login/login.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+</head>
+<body>
+  
+<!-- 登录块 -->
+<div class="login">
+    <div class="wrap">
+        <form class="col-sm-5 form_box">
+            <div class="form-group">
+              <label for="inputPhone" class="col-sm-3 control-label">手机号</label>
+              <div class="col-sm-8 input_box">
+                <input type="phone" class="form-control" id="inputPhone" placeholder="手机号">
+              </div>
+            </div>
+            <div class="blank20"></div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+              <div class="col-sm-8 input_box">
+                <input type="password" class="form-control password_con" id="inputPassword3">
+                <span class="glyphicon glyphicon-ok password_eye"></span>
+              </div>
+            </div>
+            <div class="blank10"></div>
+
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-10">
+                <button type="submit" class="col-sm-5 btn btn-primary submit_btn" disabled>登录</button>
+              </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<div class="blank20"></div>
+<div class="blank20"></div>
+
+
+
+<script type="text/javascript">
+  $(function(){
+
+    var phone_state = false
+    var password_state = false
+
+    $('#inputPhone').bind('input propertychange',function(){
+      if ($(this).val() !== "") {
+        phone_state = true
+      } else {
+        phone_state = false
+      }
+    })
+
+    $('.password_con').bind('input propertychange',function(){
+      if ($(this).val() !== "") {
+        password_state = true
+      } else {
+        password_state = false
+      }
+    })
+
+    // 密码可见控制
+     $('.password_eye').click(function() {
+      if ($(this).hasClass('glyphicon-ok')) {
+        $(this).removeClass('glyphicon-ok').addClass('glyphicon-remove')
+        $(this).siblings('input').attr('type', 'text')
+      } else {
+        $(this).removeClass('glyphicon-remove').addClass('glyphicon-ok')
+        $(this).siblings('input').attr('type', 'password')
+      }
+    })
+
+    $('.form_box').bind('input propertychange',function(){
+      if (phone_state && password_state) {
+        $('.submit_btn').removeAttr('disabled')
+      } else {
+        $('.submit_btn').attr('disabled', 'true')
+      }
+    })
+  })
+</script>
+
+
+</body>
+</html>

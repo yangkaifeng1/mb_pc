@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快捷充值</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../css/user/user.css">
+    <link rel="stylesheet" href="../../../css/index.css">
+
+    <link rel="stylesheet" href="//qidian.gtimg.com/lulu/theme/peak/css/common/ui/Tips.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="//qidian.gtimg.com/c/=/lulu/theme/peak/js/common/ui/Follow.js,/lulu/theme/peak/js/common/ui/ErrorTip.js,/lulu/theme/peak/js/common/ui/Validate.js"></script>
+</head>
+<body>
+<div class="bf_fff">
+    <!-- 分类头部 -->
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#quick" data-toggle="tab" class="f_333 p-l-r-20">
+                快捷充值
+            </a>
+        </li>
+        <li>
+            <a href="#net_silver" data-toggle="tab" class="f_333 p-l-r-20">
+                网银充值
+            </a>
+        </li>
+    </ul>
+    <!-- 分类内容 -->
+    <div class="tab-content">
+
+        <!-- 快捷充值 -->
+        <div class="tab-pane fade in active" id="quick">
+            <div class="blank50"></div>
+            <div>
+                <span class="col-sm-offset-2 col-sm-1 tr">银行：</span>
+                <img src="../../../images/banks/Industrial_c.png" alt="">
+                <span>中国工商银行（尾号6666）</span>
+            </div>
+            <div class="blank20"></div>
+            <div class="h62 bo_eb dis_ib fz_14 f_333 pr col-sm-offset-3">
+                <div class="dis_ib lh58 bor_eb p-l-r-20">建议限额（元）</div>
+                <div class="pr dis_ib" style="top: 10px;">
+                    <div class="dis_ib bor_eb p-l-r-20 w100 h40">
+                        <div>单笔限额</div>
+                        <div>2000</div>
+                    </div>
+                    <div class="dis_ib bor_eb p-l-r-20 w100 h40">
+                        <!--<div class="blank10"></div>-->
+                        <div>每日限额</div>
+                        <div>12000</div>
+                    </div>
+                    <div class="dis_ib p-l-r-20 w100 h40">
+                        <div>每月限额</div>
+                        <div>无限额</div>
+                    </div>
+                </div>
+                <img src="../../../images/icon/triangle.png" alt="" class="ps" style="transform:rotate(90deg);left:60px;top:-14px;">
+            </div>
+            <div class="blank30"></div>
+            <form id="validateForm1" class="bgwh fz_14 f_666" novalidate="novalidate ">
+                <div class="clearfix h58">
+                    <label class="col-sm-offset-1 col-sm-2 tr lh40" for="nums1">充值金额：</label>
+                    <div class="ovh col-sm-3 p0">
+                        <input id="nums1" type="number" class="ui-input form-control h40" min="100" max="50000" size="5" required="" placeholder="请输入充值金额">
+                    </div>
+                </div>
+                <div class="clearfix h58">
+                    <label class="col-sm-offset-1 col-sm-2 tr lh40">密码：</label>
+                    <div class="ovh col-sm-3 p0">
+                        <input type="password" id="pwd1" class="ui-input  form-control h40" required="">
+                    </div>
+                </div>
+                <div class="clearfix h58">
+                    <label for="phone_code1" class="col-sm-offset-1 col-sm-2 tr lh40">短信动态码：</label>
+                    <div class="col-sm-3ovh col-sm-3 p0">
+                        <input type="text" class="h40 col-sm-7 bdr4 bdccc pl5" id="phone_code1" placeholder="请输入短信动态码" required="">
+                        <input type="button" class="col-sm-offset-1 col-sm-4 h40 bdccc bdr4 p5" value="获取验证码">
+                    </div>
+                </div>
+                <div class="clearfix mt20">
+                    <div class="cell col-sm-offset-3 col-sm-3 p0">
+                        <input type="submit" id="validateSubmit1" class="clip" hidden="hidden">
+                        <label for="validateSubmit1" class="ui-button ui-button-primary btn w-100 h40 theme_bg f_white fz_16 lh30">确认充值</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- 网银充值 -->
+        <div class="tab-pane fade" id="net_silver">
+            <div class="blank50"></div>
+            <div>
+                <span class="col-sm-offset-1 col-sm-2 tr">充值方式：</span>
+                <img src="../../../images/banks/fuyou.png" alt="">
+                <div class="col-sm-offset-3 ">富友支付（支持多家银行）</div>
+            </div>
+            <div class="blank30"></div>
+            <form id="validateForm2" class="bgwh fz_14 f_666" novalidate="novalidate ">
+                <div class="clearfix h58">
+                    <label class="col-sm-offset-1 col-sm-2 tr lh40" for="nums2">充值金额：</label>
+                    <div class="ovh col-sm-3 p0">
+                        <input id="nums2" type="number" class="ui-input form-control h40" min="100" max="50000" size="5" required="" placeholder="请输入充值金额">
+                    </div>
+                </div>
+                <div class="clearfix h58">
+                    <label class="col-sm-offset-1 col-sm-2 tr lh40">密码：</label>
+                    <div class="ovh col-sm-3 p0">
+                        <input type="password" id="pwd2" class="ui-input  form-control h40" required="">
+                    </div>
+                </div>
+                <div class="clearfix mt20">
+                    <div class="cell col-sm-offset-3 col-sm-3 p0">
+                        <input type="submit" id="validateSubmit2" class="clip" hidden="hidden">
+                        <label for="validateSubmit2" class="ui-button ui-button-primary btn w-100 h40 theme_bg f_white fz_16 lh30">确认充值</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    new Validate($('#validateForm1'),
+        function() {
+            alert('全部验证通过');
+        },
+        {validate: [
+            {
+                id: 'nums1',
+                method: function (el) {
+                    if (el.val() % 50 !== 0) {
+                        return '必须是50的倍数'
+                    } else {
+                        console.log('yes')
+                    }
+                }
+            },
+            {
+                id: 'phone_code',
+                ignore: '验证码不能为空'
+            }
+        ]}
+    );
+
+    new Validate($('#validateForm2'),
+        function() {
+            alert('全部验证通过');
+        },
+        {validate: [
+            {
+                id: 'nums2',
+                method: function (el) {
+                    if (el.val() % 50 !== 0) {
+                        return '必须是50的倍数'
+                    } else {
+                        console.log('yes')
+                    }
+                }
+            }
+        ]}
+    );
+
+</script>
+
+</body>
+</html>

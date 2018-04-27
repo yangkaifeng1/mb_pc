@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户消息管理</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user/user.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="bf_fff">
+    <!-- 管理分类头部 -->
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#all_target" data-toggle="tab">
+                系统消息（<span>5</span>）
+            </a>
+        </li>
+    </ul>
+    <!-- 管理分类内容 -->
+    <div class="tab-content">
+        <!-- 全部标的 -->
+        <div class="tab-pane fade in active" id="all_target">
+            <div class="blank20"></div>
+            <!---->
+            <!---->
+            <!-- 交易时间查询 -->
+            <div class="search_contianer pl30">
+                <form class="form-inline pl30" id="search_target1">
+                    <div class="dis_ib">交易时间：</div>
+                    <!---->
+                    <!-- 时间选择器 -->
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1_target1'>
+                            <input type='text' class="form-control" name="start_time"/>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+    </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker2_target1'>
+                            <input type='text' class="form-control" name="end_time"/>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+    </span>
+                        </div>
+                    </div>
+                    <input id="submit_target1" type="button" value="查询" name="submit" class="btn theme_bg f_white">
+                </form>
+            </div>
+            <!---->
+            <div class="blank20"></div>
+            <!---->
+            <div>
+                <table class="table tc f_333">
+                    <thead>
+                    <tr class="tc">
+                        <th class="tc">分类</th>
+                        <th class="tc">时间</th>
+                        <th class="tc">备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>投资提醒</td>
+                        <td class="f_40ad57">2018-04-10 23:48:52</td>
+                        <td class="w500 tl">
+                            出借成功：您已成功向大众质押2018041704项目投资:1000.00元。<br>该项 目回款最迟2018-05-29 全部到账。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投资提醒</td>
+                        <td class="f_40ad57">2018-04-10 23:48:52</td>
+                        <td class="w500 tl">
+                            出借成功：您已成功向大众质押2018041704项目投资:1000.00元。<br>该项 目回款最迟2018-05-29 全部到账。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投资提醒</td>
+                        <td class="f_40ad57">2018-04-10 23:48:52</td>
+                        <td class="w500 tl">
+                            出借成功：您已成功向大众质押2018041704项目投资:1000.00元。<br>该项 目回款最迟2018-05-29 全部到账。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投资提醒</td>
+                        <td class="f_40ad57">2018-04-10 23:48:52</td>
+                        <td class="w500 tl">
+                            出借成功：您已成功向大众质押2018041704项目投资:1000.00元。<br>该项 目回款最迟2018-05-29 全部到账。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投资提醒</td>
+                        <td class="f_40ad57">2018-04-10 23:48:52</td>
+                        <td class="w500 tl">
+                            出借成功：您已成功向大众质押2018041704项目投资:1000.00元。<br>该项 目回款最迟2018-05-29 全部到账。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投资提醒</td>
+                        <td class="f_40ad57">2018-04-10 23:48:52</td>
+                        <td class="w500 tl">
+                            出借成功：您已成功向大众质押2018041704项目投资:1000.00元。<br>该项 目回款最迟2018-05-29 全部到账。
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!---->
+            <!-- 分页 -->
+            <div class="pagenation_container f_r">
+                <p id="testPage_target1" style="height: 28px;"></p>
+            </div>
+            <div class="blank20"></div>
+        </div>
+        <!---->
+        <!-- 待满标 -->
+        <div class="tab-pane fade" id="danger_control">
+        </div>
+        <!---->
+        <!-- 待还款 -->
+        <div class="tab-pane fade pl30 pr30 f_333 fz_14" id="send_log">
+        </div>
+        <!---->
+        <!-- 已还款 -->
+        <div class="tab-pane fade pl30 pr30" id="back_log">
+
+        </div>
+
+        <!-- 已流标 -->
+        <div class="tab-pane fade pl30 pr30" id="back_log">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

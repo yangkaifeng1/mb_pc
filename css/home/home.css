@@ -1,0 +1,44 @@
+/*公司推广活动*/
+.promotion{
+	width: 1200px;
+	background: #fff;
+	padding: 30px 0;
+	box-shadow: 3px -3px 47px #ddd;
+}
+.promotion .promotion_title{
+	text-align: center;
+	color: #333;
+}
+
+.promotion .promotion_getmore{
+	text-align: center;
+}
+
+.promotion .promotion_getmore a{
+	color: #f3943e;
+	text-decoration: underline;
+}
+
+.promotion .promotion_title h2{
+	font-size: 30px;
+}
+
+.promotion .promotion_container{
+	width: 100%;
+}
+
+.promotion .promotion_container .promotion_item{
+	text-align: center;
+}
+
+.promotion .promotion_container .promotion_item .mask{
+	width: 340px;
+	height: 190px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+.promotion .promotion_container .promotion_item .mask img{
+	width: 100%;
+}
