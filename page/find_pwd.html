@@ -4,36 +4,34 @@
     <meta name="renderer" content="webkit">
     <meta name="Generator"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>个人中心 - 满宝金服</title>
+    <title>找回密码 - 满宝金服</title>
     <meta name="keywords" content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融"/>
-    <meta name="description" content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
+    <meta name="description"
+          content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
 
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->      
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" type="text/css" href="../css/pagination/pagination.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <link rel="stylesheet" type="text/css" href="../css/user/user.css">
-    <link rel="stylesheet" type="text/css" href="../css/user/bootstrap-datetimepicker.css">
 
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- 时间选择器 -->
-    <script type="text/javascript" src="../js/util/moment.js"></script>
-    <script type="text/javascript" src="../js/util/bootstrap-datetimepicker.js"></script>
-
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="p0">
 <!-- 头部 -->
 <div class="header" id="header">
     <div class="constr">
         <div class="wrap">
             <div class="app_down f_l">
                 <span class="glyphicon glyphicon-home"></span>全国客服热线：4008-507-568（周一至周五9:00-17:30）
+
+
+                <a href=# title="这里是显示的文字">hello</a>
             </div>
 
             <div class="f_r lh30"></div>
@@ -41,20 +39,20 @@
                 <ul class="right mt9">
                     <li class=" top_li relative caiji_a">
                         <div id="user_head_tip">
-                            <a >登录</a>
-                            <a >注册</a>
+                            <a href="javascript:void(0);" onclick="ajax_login();">登录</a>
+                            <a href="/index.php?ctl=user&act=register" class="ml20">注册</a>
                         </div>
                     </li>
                     <li class="top_li caiji_a"><a href="">帮助中心</a></li>
                     <li class="top_li caiji_a"><a href="">消息中心</a></li>
                     <li class=" top_li relative caiji_a">
-                       <span class="glyphicon glyphicon-phone" style="color: #acacac;"></span><a href="">满宝金服APP</a>
-                       <i class="iconfont">
-                           <img src="../images/index/wechat.png">
-                       </i>
-                       <i class="iconfont">
-                           <img src="../images/index/weibo.png">
-                       </i>
+                        <span class="glyphicon glyphicon-phone" style="color: #acacac;"></span><a href="">满宝金服APP</a>
+                        <i class="iconfont">
+                            <img src="../images/index/wechat.png">
+                        </i>
+                        <i class="iconfont">
+                            <img src="../images/index/weibo.png">
+                        </i>
                     </li>
                 </ul>
             </div>
@@ -74,7 +72,7 @@
                 <li><a href="#">首页</a></li>
                 <li><a href="#">我要投资</a></li>
                 <li><a href="#">积分商城</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user mr5" ></span>账号中心</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user mr5"></span>账号中心</a></li>
 
 
             </ul>
@@ -86,116 +84,86 @@
 
 <!-- 详细描述 -->
 <div class="bg_box">
-    <div class="blank15"></div>
-    <!-- 用户个人基本信息banner -->
-    <div class="user_des">
-        <div class="blank20"></div>
-        <div class="wrap f_white fz_16 clearfloat">
-            <div class="f_l ml80">
-                <div class="avatar f_l"></div>
-                <div class="f_l ml20">
-                    <div class="blank20"></div>
-                    <div>未实名认证</div>
-                    <div>
-                        <span>188****5566</span>
-                        <span class="glyphicon glyphicon-phone"></span>
-                        <span class="glyphicon glyphicon-user"></span>
-                        <span class="glyphicon glyphicon-credit-card"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="f_r tr">
-                <div class="sign p_0_5 bdwhite dis_ib bdr5">立即签到</div>
-                <div class="blank20"></div>
-                <div class="last_signtime">
-                    <span class="fz_14">上次登录时间：</span><span>2018-04-10   17:05:40</span>
-                </div>
-            </div>
-        </div> 
-    </div>
-
-    <div class="blank20"></div>
-
-
     <div class="wrap clearfloat">
-        <!-- 左侧导航栏 -->
-        <div class="short f_l left_menu b_white tc fz_16 f_666">
-            <ul class="nav">
-                <li>
-                    <div class="item"><a href="#user_index" data-toggle="tab">账户首页</a></div>
-                </li>
-                <li>
-                    <div class="item"><a href="#invest_manage" data-toggle="tab">投资管理</a></div>
-                </li>
-                <li>
-                    <div class="item"><a href="#money_manage" data-toggle="tab">资金管理</a></div>
-                </li>
-                <li>
-                    <div class="item"><a href="#my_reward?ecvType=red_reward" data-toggle="tab">我的奖励</a></div>
-                </li>
-                <li class="active">
-                    <div class="item"><a href="#recommand_reward" data-toggle="tab">推荐奖励</a></div>
-                </li>
-                <li>
-                    <div class="item"><a href="#msg_manage" data-toggle="tab">消息管理</a></div>
-                </li>
-                <li>
-                    <div class="item"><a href="#user_manage" data-toggle="tab">账户管理</a></div>
-                </li>
-            </ul>
+        <div class="blank10"></div>
+        <div class="bddf">
+            <div class="headers p15">
+                <div class="blank10"></div>
+                <span class="icon_line dis_ib"></span>
+                <span class="fz_18 f_333 ml15 dis_ib icon_text">找回登录密码</span>
+            </div>
+            <div class="blank20"></div>
+            <div>
+                <div class="bte5"></div>
+            </div>
+            <div class="blank20"></div>
+            <div>
+                <form id="validateForm" class="bgwh fz_14 f_666" novalidate="novalidate ">
+                    <div class="clearfix h58 tc">
+                        <label class="col-sm-offset-3 col-sm-2 tr lh40" for="bank_space">原手机号码：</label>
+                        <div class="ovh col-sm-3 p0">
+                            <input id="bank_space" type="text" class="ui-input form-control h40"
+                                   placeholder="请输入手机号"
+                                   required="">
+                        </div>
+                    </div>
+
+                    <div class="clearfix h58">
+                        <label for="photo_code" class="col-sm-offset-3 col-sm-2 tr lh40">图形验证码：</label>
+                        <div class="col-sm-3 ovh p0">
+                            <input type="text" class="ui-input h40 col-sm-7 bdr4 bdccc pl5" id="photo_code"
+                                   placeholder="请输入图形验证码" required="">
+                            <input type="button" class="col-sm-offset-1 col-sm-4 h40 bdccc bdr4 p5" value="获取验证码">
+                        </div>
+                    </div>
+
+                    <div class="clearfix h58">
+                        <label for="phone_code" class="col-sm-offset-3 col-sm-2 tr lh40">短信动态码：</label>
+                        <div class="col-sm-3 ovh p0">
+                            <input type="text" class="ui-input h40 col-sm-7 bdr4 bdccc pl5" id="phone_code"
+                                   placeholder="请输入短信动态码" required="">
+                            <input type="button" class="col-sm-offset-1 col-sm-4 h40 bdccc bdr4 p5" value="获取验证码">
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="cell col-sm-offset-5 col-sm-3 p0">
+                            <input type="submit" id="validateSubmit" class="clip" hidden="hidden">
+                            <label for="validateSubmit"
+                                   class="ui-button ui-button-primary btn w-100 h40 theme_bg f_white fz_16 lh30">下一步</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="blank30"></div>
+
+            <div class="pl20">
+                <div class="fz_16 f_666">温馨提示</div>
+                <div class="fz_14 f_999">1、登陆密码需至少包含数字、字母，且长度在6~20位。</div>
+                <div class="fz_14 f_999">2、建议定期更换登陆密码，安全性高的密码可以使您的账号更加安全。</div>
+            </div>
+
+            <div class="blank30"></div>
+
         </div>
-
-        <!-- 右侧内容栏 -->
-        <div class="tab-content f_l w950 right_con">
-            <style>
-                iframe {
-                    width:100%;
-                    margin:0 0 1em;
-                    border:0;
-                }
-
-            </style>
-            <script>
-
-                window.onload = function () {
-                    var activeTab = $(".left_menu .nav .active a").attr('href').split('#')[1]
-//                    $('.right_con').html('<iframe id="iframe" src="user_rightcon/'+activeTab+'.html" frameborder="0" width="100%"></iframe>')
-                    $('.right_con').html('<iframe id="iframe" src="user_rightcon/user_manage/real_check.html" frameborder="0" width="100%"></iframe>')
-                    $("#iframe").load(function(){
-                        var mainheight = $(this).contents().find("body").height()+30;
-                        $(this).height(mainheight);
-                    });
-                };
-                $('.left_menu .nav li a').click(function () {
-                    var activeTab = $(this).attr('href').split('#')[1]
-                    console.log(activeTab)
-                    var iframeHeight = $("iframe").contents().find("html").height();
-                    $('.right_con').html('<iframe id="iframe" src="user_rightcon/'+activeTab+'.html" frameborder="0" width="100%"></iframe>')
-                    $("#iframe").load(function(){
-                        var mainheight = $(this).contents().find("body").height()+30;
-                        $(this).height(mainheight);
-                    });
-                })
-            </script>
-        </div>
-        
-
-    </div> 
+    </div>
 </div>
 
-<div class="blank20"></div>
 
 <!-- 底部 -->
 <style type="text/css">
-  .f_box{
-    margin: 28px 0;
-  }
-  .footer_hot{
-    margin: 28px 0 0 0;
-  }
-  .footer_hotp1, .footer_hotp2{
-    padding-bottom: 25px;
-  }
+    .f_box {
+        margin: 28px 0;
+    }
+
+    .footer_hot {
+        margin: 28px 0 0 0;
+    }
+
+    .footer_hotp1, .footer_hotp2 {
+        padding-bottom: 25px;
+    }
 </style>
 
 <div id="ftw">
@@ -215,7 +183,6 @@
                                 <li><a href="/index.php?ctl=help&id=110">公司证照</a></li>
                                 <li><a href="/index.php?ctl=help&id=161">管理团队</a></li>
                                 <li><a href="/index.php?ctl=help&id=138">联系我们</a></li>
-
                                 <li class="blank0"></li>
                             </ul>
                             <div class="blank0"></div>
@@ -406,75 +373,26 @@
         </div>
         <div id="gotop"></div>
     </div>
-
+</div>
 <!-- 底部 -->
 
 
-<script type="text/javascript" src="../js/pagination/pagination.js"></script>
 <script type="text/javascript">
-    // 时间选择器
-    $('#datetimepicker1').datetimepicker({
-        format: 'YYYY/MM/DD'
-    });
-    $('#datetimepicker2').datetimepicker({
-        format: 'YYYY/MM/DD'
-    });
-    $("#datetimepicker1").on("dp.change",function (e) {
-        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-    });
-    $("#datetimepicker2").on("dp.change",function (e) {
-        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-    });
+    $(function () {
+        $("#pay_psd").blur(function () {
+            $('.pay_err').removeClass('hide')
+        })
 
-    $('#submit').click(function() {
-        var d = {};
-        var data=$('#search_user').serialize();
-        var t = $('form').serializeArray();
-        $.each(t, function() {
-          d[this.name] = this.value;
+        $(".get_detail").hover(function () {
+            $('.detail_money').show()
+        }, function () {
+            $('.detail_money').hide()
         });
-        console.log(JSON.stringify(d));
-    });
+    })
 
-
-
-    // 分页
-    // 页面当前页数
-    var currentPageId = 1;
-    if (/pageid/.test(location.href)) {
-        $(window).scrollTop($('#testPage_target1').offset().top);
-        currentPageId = location.href.split('pageid=')[1].split(/\D/g)[0];
-        console.log(currentPageId)
-    }
-
-    $('#testPage_target1').pagination({
-        length: 280,
-        every: 15,
-        current: currentPageId,
-        href: function(current) {
-            return '?pageid=' + current 
-        }
-    });
-
-    $('#testPage_money1').pagination({
-        length: 280,
-        every: 15,
-        current: currentPageId,
-        href: function(current) {
-            return '?pageid=' + current 
-        }
-    });
-
-    $('#testPage_reward1').pagination({
-        length: 280,
-        every: 15,
-        current: currentPageId,
-        href: function(current) {
-            return '?pageid=' + current 
-        }
-    });
 
 </script>
+
 
 </body>
 </html>

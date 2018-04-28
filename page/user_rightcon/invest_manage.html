@@ -21,6 +21,7 @@
     <script type="text/javascript" src="../../js/pagination/pagination.js"></script>
     <script src="../../js/util/moment.js"></script>
     <script src="../../js/util/bootstrap-datetimepicker.js"></script>
+    <script src="../../js/util/util.js"></script>
 
 </head>
 <body>
@@ -176,24 +177,6 @@
             </div>
             <div class="blank20"></div>
         </div>
-
-        <!-- 待满标 -->
-        <div class="tab-pane fade" id="danger_control">
-        </div>
-
-        <!-- 待还款 -->
-        <div class="tab-pane fade pl30 pr30 f_333 fz_14" id="send_log">
-        </div>
-
-        <!-- 已还款 -->
-        <div class="tab-pane fade pl30 pr30" id="back_log">
-
-        </div>
-
-        <!-- 已流标 -->
-        <div class="tab-pane fade pl30 pr30" id="back_log">
-
-        </div>
     </div>
 
     <!--分页选择器-->
@@ -309,11 +292,11 @@
 
     });
 
+    //点击导航栏
     $(".nav li").click(function () {
         var vals = $(this).children('a').attr('href').split('#')[1]
-
-        if (vals === 'all_target') {
-
+        var first_val = $('.nav li').eq(0).children('a').attr('href').split('#')[1]
+        if (vals === first_val) {
             debugger
             window.location = location.href.split('?')[0]
             return
@@ -335,44 +318,7 @@
         }
     })
 
-    //url校验
-    //获取参数值 t：参数名
-    function getUrl(t){
-        var e = new RegExp("(^|&)"+t+"=([^&]*)(&|$)","i"),
-            i = window.location.search.substr(1).match(e);
-        return null!=i?decodeURI(i[2]):null
-    }
 
-    //改变参数  t：url  e：参数名 i: 参数值
-    function changeUrl(t, e, i){
-        var n=this, r=e+"=([^&]*)", a=e+"="+i, s=encodeURI(n.getUrl(e));
-        if (t.match(r)){
-            var t_search = t.split('?')[1]
-            var t_path = t.split('?')[0]
-            t_search = t_search.replace(s, i)
-            return t= t_path + '?' + t_search
-        } else {
-            if(t.match("[?]")){
-                return t+"&"+a
-            } else {
-                return t+"?"+a
-            }
-        }
-    }
-
-    //删除参数 t：url  e：参数名
-    function deleteUrl(t, e){
-        var n="";
-        if(t.indexOf("?")==-1)return t;
-        n=t.substr(t.indexOf("?")+1);
-        var r="", a="";
-        if(n.indexOf("&")!=-1){
-            r=n.split("&");
-            for(i in r)r[i].split("=")[0]!=e&&(a=a+r[i].split("=")[0]+"="+r[i].split("=")[1]+"&");
-            return t.substr(0, t.indexOf("?"))+"?"+a.substr(0, a.length-1)
-        }
-        return r=n.split("="), r[0]==e?t.substr(0, t.indexOf("?")):t
-    }
 </script>
 
 </body>

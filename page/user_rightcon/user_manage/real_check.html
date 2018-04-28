@@ -19,9 +19,10 @@
             crossorigin="anonymous"></script>
 
     <script src="//qidian.gtimg.com/c/=/lulu/theme/peak/js/common/ui/Follow.js,/lulu/theme/peak/js/common/ui/ErrorTip.js,/lulu/theme/peak/js/common/ui/Validate.js"></script>
+    <script src="../../../js/lulu_UI/Select.js"></script>
+    <script src="../../../js/util/pcasunzip.js"></script>
 </head>
 <body>
-
 <div class="bf_fff p-l-r-20">
     <div class="headers">
         <div class="blank10"></div>
@@ -68,10 +69,9 @@
                 <div class="blank20"></div>
                 <div>
                     <div class="clearfix h58">
-                        <label class="col-sm-2 tr lh40" for="bank_name">开户银行：</label>
-                        <div class="ovh col-sm-4 p0 h40
-">
-                            <select style="display: none;" required="">
+                        <label class="col-sm-2 tr lh40">开户银行：</label>
+                        <div class="ovh col-sm-4 p0 h40">
+                            <select  required="" class="w-100 selecte1">
                                 <option value="">选择</option>
                                 <option value="1">中国银行</option>
                                 <option value="1">中国工商银行</option>
@@ -80,21 +80,42 @@
                                 <option value="1">招商银行</option>
                                 <option value="1">浦发银行</option>
                                 <option value="1">华夏银行</option>
-                                <option value="1">中国建设银行</option>
-                                <option value="1">中国农业银行</option>
-                                <option value="1">招商银行</option>
-                                <option value="1">浦发银行</option>
-                                <option value="1">华夏银行</option>
-                                <option value="1">中国建设银行</option>
-                                <option value="1">中国农业银行</option>
-                                <option value="1">招商银行</option>
-                                <option value="1">浦发银行</option>
-                                <option value="1">华夏银行</option>
                             </select>
-                            <script src="//qidian.gtimg.com/lulu/theme/peak/js/common/ui/Select.js"></script>
-                            <script type="text/javascript">
-                                $('select').selectMatch();
-                            </script>
+                        </div>
+                    </div>
+                    <div class="clearfix h40">
+                        <a href="" class="col-sm-offset-2 col-sm-2 lh40 p0 mt-10">支持银行和限额</a>
+                    </div>
+
+                    <div class="clearfix h58">
+                        <label class="col-sm-2 tr lh40">省份：</label>
+                        <div class="ovh col-sm-4 p0 h40">
+                            <select  required="" class="w-100" name="user.province" id="province">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="clearfix h58">
+                        <label class="col-sm-2 tr lh40">城市：</label>
+                        <div class="ovh col-sm-4 p0 h40">
+                            <select  required="" class="w-100" name="user.city" id="city">
+                            </select>
+                        </div>
+                    </div>
+                    <script language="javascript">
+                        new PCAS("user.province","user.city");
+                        $('#province').change(function () {
+                            setTimeout(function () {
+                                $('#city').selectMatch();
+                            },100)
+                        })
+                    </script>
+
+
+                    <div class="clearfix h58">
+                        <label class="col-sm-2 tr lh40" for="bank_space">开户行：</label>
+                        <div class="ovh col-sm-4 p0">
+                            <input id="bank_space" type="text" class="ui-input form-control h40" placeholder="请输入银行卡开户网点"
+                                   required="">
                         </div>
                     </div>
 
@@ -135,6 +156,10 @@
 </div>
 
 <script>
+
+    $('select').selectMatch();
+
+
     new Validate($('form'),
         function () {
             alert('全部验证通过');
@@ -148,6 +173,10 @@
                 {
                     id: 'paper_code',
                     ignore: '证件号码不能为空'
+                },
+                {
+                    id: 'bank_space',
+                    ignore: '银行卡开户网点不能为空'
                 },
                 {
                     id: 'card_num',

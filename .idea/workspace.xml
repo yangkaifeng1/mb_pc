@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edc6a599-a3a6-4496-8128-64bfc2bf95a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/lulu_UI/Select.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/lulu_UI/Tips.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/invest_confirm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/invest_success.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/money_manage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/my_reward.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/recommand_reward.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/user_index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/user_manage/fast_recharge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/about.html" afterPath="$PROJECT_DIR$/page/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/index.html" afterPath="$PROJECT_DIR$/page/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lulu_UI/Select.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/util/pcasunzip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/user_rightcon/my_reward/score_detail.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/user_rightcon/my_reward/my_reward.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/invest/tagSelect.js" afterPath="$PROJECT_DIR$/js/invest/tagSelect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/util/util.js" afterPath="$PROJECT_DIR$/js/util/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/user.html" afterPath="$PROJECT_DIR$/page/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/user_rightcon/invest_manage.html" afterPath="$PROJECT_DIR$/page/user_rightcon/invest_manage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html" afterPath="$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,65 +29,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="invest.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/invest/invest.css">
+      <file leaf-file-name="score_detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward/score_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usermsg_commit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/user_rightcon/usermsg_commit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="invest_manage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/page/user_rightcon/invest_manage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="234" column="65" lean-forward="false" selection-start-line="234" selection-start-column="58" selection-end-line="234" selection-end-column="65" />
+            <state relative-caret-position="1120">
+              <caret line="40" column="13" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="40" selection-end-column="13" />
               <folding>
-                <element signature="n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="money_manage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/user_rightcon/money_manage.html">
+      <file leaf-file-name="find_pwd.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/page/find_pwd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="511">
+              <caret line="146" column="31" lean-forward="false" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="msg_manage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/user_rightcon/msg_manage.html">
+      <file leaf-file-name="raise_reward.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward/raise_reward.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-448">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tagSelect.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/invest/tagSelect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1120">
-              <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="-709">
+              <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,14 +69,14 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="341">
+              <caret line="635" column="5" lean-forward="false" selection-start-line="635" selection-start-column="1" selection-end-line="635" selection-end-column="5" />
               <folding>
-                <marker date="1524736154270" expanded="true" signature="88:143" ph="{...}" />
-                <marker date="1524736154270" expanded="true" signature="105867:105909" ph="{...}" />
-                <marker date="1524736154270" expanded="true" signature="105932:105976" ph="{...}" />
-                <marker date="1524736154270" expanded="true" signature="116615:116806" ph="{...}" />
-                <marker date="1524736154270" expanded="true" signature="119957:120148" ph="{...}" />
+                <marker date="1524916316810" expanded="true" signature="88:143" ph="{...}" />
+                <marker date="1524916316810" expanded="true" signature="105867:105909" ph="{...}" />
+                <marker date="1524916316810" expanded="true" signature="105932:105976" ph="{...}" />
+                <marker date="1524916316810" expanded="true" signature="116615:116806" ph="{...}" />
+                <marker date="1524916316810" expanded="true" signature="119957:120148" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -115,34 +85,10 @@
       <file leaf-file-name="real_check.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="117" column="62" lean-forward="false" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
+            <state relative-caret-position="397">
+              <caret line="152" column="15" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="152" selection-end-column="15" />
               <folding>
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#3;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-              <folding>
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Select.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/lulu_UI/Select.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-              <folding>
-                <element signature="e#1664#2179#2" expanded="true" />
+                <element signature="n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -153,20 +99,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fz</find>
-      <find>.ui-tips-error .ui-tips-before</find>
-      <find>font-weight</find>
-      <find>2</find>
-      <find>p-l-r</find>
-      <find>validateForm1</find>
-      <find>iframe</find>
-      <find>fz_3</find>
       <find>lh</find>
       <find>bdr3</find>
       <find>.tl</find>
@@ -189,6 +128,14 @@
       <find>getss</find>
       <find>url</find>
       <find>setsss</find>
+      <find>select</find>
+      <find>selectMatch</find>
+      <find>data</find>
+      <find>o</find>
+      <find>o</find>
+      <find>mt-1</find>
+      <find>`</find>
+      <find>e5e5e5</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,7 +148,6 @@
         <option value="$PROJECT_DIR$/page/user_rightcon/user_account.html" />
         <option value="$PROJECT_DIR$/page/user_rightcon/user_invest.html" />
         <option value="$PROJECT_DIR$/page/user_rightcon/msg_mange.html" />
-        <option value="$PROJECT_DIR$/page/user_rightcon/my_reward.html" />
         <option value="$PROJECT_DIR$/page/user_rightcon/msg_manage.html" />
         <option value="$PROJECT_DIR$/page/target-detail.html" />
         <option value="$PROJECT_DIR$/page/invest_confirm.html" />
@@ -213,16 +159,26 @@
         <option value="$PROJECT_DIR$/page/about.html" />
         <option value="$PROJECT_DIR$/css/invest/common.css" />
         <option value="$PROJECT_DIR$/css/target-detail/target-detail.css" />
-        <option value="$PROJECT_DIR$/page/user.html" />
         <option value="$PROJECT_DIR$/css/invest/invest.css" />
         <option value="$PROJECT_DIR$/css/mockup.css" />
         <option value="$PROJECT_DIR$/css/ui.css" />
         <option value="$PROJECT_DIR$/css/lulu_UI/Tips.css" />
         <option value="$PROJECT_DIR$/css/lulu_UI/Select.css" />
-        <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html" />
         <option value="$PROJECT_DIR$/page/user_rightcon/money_manage.html" />
+        <option value="$PROJECT_DIR$/js/util/util.js" />
+        <option value="$PROJECT_DIR$/js/invest/tagSelect.js" />
+        <option value="$PROJECT_DIR$/js/util/pcasunzip.js" />
+        <option value="$PROJECT_DIR$/js/lulu_UI/Select.js" />
+        <option value="$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html" />
         <option value="$PROJECT_DIR$/page/user_rightcon/invest_manage.html" />
+        <option value="$PROJECT_DIR$/page/user_rightcon/my_reward.html" />
+        <option value="$PROJECT_DIR$/page/user_rightcon/score_detail.html" />
+        <option value="$PROJECT_DIR$/page/user_rightcon/my_reward/score_detail.html" />
+        <option value="$PROJECT_DIR$/page/user_rightcon/my_reward/raise_reward.html" />
+        <option value="$PROJECT_DIR$/page/user_rightcon/my_reward/red_reward.html" />
+        <option value="$PROJECT_DIR$/page/user.html" />
+        <option value="$PROJECT_DIR$/css/index.css" />
+        <option value="$PROJECT_DIR$/page/find_pwd.html" />
       </list>
     </option>
   </component>
@@ -256,7 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -324,6 +279,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user_rightcon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_reward" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb_pc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb_pc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -378,6 +355,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lulu_UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb_pc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb_pc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="invest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -410,8 +405,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb_pc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb_pc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,6 +433,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\codespace\mb_pc\page\user_rightcon\my_reward" />
       <recent name="E:\codespace\mb_pc\images\icon" />
     </key>
   </component>
@@ -438,20 +449,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.invest_manage.html">
-    <configuration default="false" name="real_check.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/user_rightcon/user_manage/real_check.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="user.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/user.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="about.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/about.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="target-detail.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/target-detail.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.find_pwd.html">
     <configuration default="false" name="invest_manage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/user_rightcon/invest_manage.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="my_reward.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/user_rightcon/my_reward/my_reward.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="score_detail.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/user_rightcon/my_reward/score_detail.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="raise_reward.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/user_rightcon/my_reward/raise_reward.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="find_pwd.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mb_pc/page/find_pwd.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -521,19 +532,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.real_check.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.user.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.about.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.target-detail.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.invest_manage.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.invest_manage.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.my_reward.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.score_detail.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.raise_reward.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.find_pwd.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.invest_manage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.user.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.real_check.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.target-detail.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.about.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.find_pwd.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.raise_reward.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.score_detail.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.my_reward.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.invest_manage.html" />
       </list>
     </recent_temporary>
   </component>
@@ -551,12 +562,13 @@
       <workItem from="1524532064410" duration="27404000" />
       <workItem from="1524618095133" duration="29049000" />
       <workItem from="1524705186688" duration="19388000" />
-      <workItem from="1524791414363" duration="28505000" />
+      <workItem from="1524791414363" duration="28960000" />
+      <workItem from="1524877481334" duration="31423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132991000" />
+    <option name="totallyTimeSpent" value="164869000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,7 +582,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16354166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16354166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -599,59 +611,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/page/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3780">
-          <caret line="135" column="34" lean-forward="false" selection-start-line="135" selection-start-column="34" selection-end-line="135" selection-end-column="34" />
-          <folding>
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/icon/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/icon/icons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/icon/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/user_rightcon/recommand_reward.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1372">
-          <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/user_rightcon/user_manage/fast_recharge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/target-detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3052">
@@ -690,11 +649,11 @@
         <state relative-caret-position="25620">
           <caret line="915" column="5" lean-forward="false" selection-start-line="915" selection-start-column="1" selection-end-line="915" selection-end-column="5" />
           <folding>
-            <marker date="1524736154270" expanded="true" signature="88:143" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="105867:105909" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="105932:105976" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="116615:116806" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="119957:120148" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="88:143" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="105867:105909" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="105932:105976" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="116615:116806" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="119957:120148" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -825,29 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/invest_success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1484">
-          <caret line="108" column="30" lean-forward="false" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#4;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/user_rightcon/user_manage/fast_recharge.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3780">
@@ -897,20 +833,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/mockup.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="107" column="3403" lean-forward="false" selection-start-line="107" selection-start-column="3403" selection-end-line="107" selection-end-column="3403" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="53725" lean-forward="false" selection-start-line="0" selection-start-column="53725" selection-end-line="0" selection-end-column="53725" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mockup.css" />
+    <entry file="file://$PROJECT_DIR$/css/ui.css" />
     <entry file="file://$PROJECT_DIR$/css/lulu_UI/Tips.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -920,7 +844,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/invest/invest.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
+        <state relative-caret-position="168">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
@@ -942,81 +866,172 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding>
-            <marker date="1524736154270" expanded="true" signature="88:143" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="105867:105909" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="105932:105976" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="116615:116806" ph="{...}" />
-            <marker date="1524736154270" expanded="true" signature="119957:120148" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/lulu_UI/Select.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
+        <state relative-caret-position="1008">
           <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
           <folding>
-            <element signature="e#1664#2179#2" expanded="true" />
+            <element signature="e#1664#2179#2" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/user.html">
+    <entry file="file://$PROJECT_DIR$/js/util/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="117" column="62" lean-forward="false" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#2;n#div#3;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/invest/tagSelect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="700">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page/user_rightcon/msg_manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="28">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/invest/tagSelect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/util/pcasunzip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="18361" lean-forward="false" selection-start-line="4" selection-start-column="18361" selection-end-line="4" selection-end-column="18361" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lulu_UI/Select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward/my_reward.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1652">
+          <caret line="178" column="14" lean-forward="false" selection-start-line="178" selection-start-column="14" selection-end-line="178" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page/user_rightcon/money_manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="1154">
+          <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page/user_rightcon/invest_manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="234" column="65" lean-forward="false" selection-start-line="234" selection-start-column="58" selection-end-line="234" selection-end-column="65" />
+        <state relative-caret-position="504">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#8435#10274#0" expanded="false" />
+            <element signature="e#10445#10977#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward/red_reward.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="133" column="76" lean-forward="false" selection-start-line="133" selection-start-column="76" selection-end-line="133" selection-end-column="76" />
+          <folding>
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="635" column="5" lean-forward="false" selection-start-line="635" selection-start-column="1" selection-end-line="635" selection-end-column="5" />
+          <folding>
+            <marker date="1524916316810" expanded="true" signature="88:143" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="105867:105909" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="105932:105976" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="116615:116806" ph="{...}" />
+            <marker date="1524916316810" expanded="true" signature="119957:120148" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/invest_success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="863">
+          <caret line="108" column="30" lean-forward="false" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward/raise_reward.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-709">
+          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/user_rightcon/user_manage/real_check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="152" column="15" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="152" selection-end-column="15" />
+          <folding>
+            <element signature="n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/user_rightcon/my_reward/score_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/find_pwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="146" column="31" lean-forward="false" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

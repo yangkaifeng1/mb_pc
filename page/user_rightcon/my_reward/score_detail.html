@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户我的奖励</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user/user.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/pagination/pagination.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../js/pagination/pagination.js"></script>
+    <script src="../../../js/util/util.js"></script>
+
+</head>
+<body>
+<div class="bf_fff">
+    <!-- 分类头部 -->
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#red_reward" data-toggle="tab">
+                红包（<span>5</span>）
+            </a>
+        </li>
+        <li>
+            <a href="#raise_reward" data-toggle="tab">
+                加息券（<span>5</span>）
+            </a>
+        </li>
+        <li>
+            <a href="#score_detail" data-toggle="tab">
+                积分明细（<span>5</span>）
+            </a>
+        </li>
+    </ul>
+    <!-- 分类内容 -->
+    <div class="tab-content">
+        <div>
+            <table class="table tc f_333">
+                <thead>
+                    <tr class="tc">
+                        <th class="tc">操作时间</th>
+                        <th class="tc">积分明细</th>
+                        <th class="tc">备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2018-04-10 23:48:52</td>
+                        <td class="f_40ad57">-100</td>
+                        <td>兑换满宝金服+3%加息劵</td>
+                    </tr>
+                    <tr>
+                        <td>2018-04-10 23:48:52</td>
+                        <td class="theme_text">+1,00</td>
+                        <td>签到送积分</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="blank20"></div>
+    <!--分页选择器-->
+    <div class="pagenation_container f_r pr30">
+        <p id="testPage" style="height: 28px;"/>
+    </div>
+</div>
+
+<script>
+    var targetStatus = getUrl('ecvType')
+    if (targetStatus) {
+        $('.nav.nav-tabs li').removeClass('active')
+        $("[href=#" + targetStatus + "]").parents('li').addClass('active')
+    } else {
+        $('.nav.nav-tabs li').eq(0).addClass('active')
+    }
+
+    // 页面当前页数
+    var currentPageId = 1;
+
+    if (/pageid/.test(location.href)) {
+        currentPageId = location.href.split('pageid=')[1].split(/\D/g)[0];
+    }
+    // 分页选择器
+    $('#testPage').pagination({
+        length: 1000,
+        every: 10,
+        current: currentPageId,
+        onClick: function (obj, current) {
+            console.log(current)
+            if (/pageid/.test(location.href)) {
+                window.location = changeUrl(location.href, 'pageid', current)
+            } else {
+                if (/\?/.test(location.href)) {
+                    window.location = location.href + '&pageid=' + current
+                } else {
+                    window.location = location.href + '?pageid=' + current
+                }
+            }
+        }
+
+    });
+
+    //点击导航栏
+    $(".nav li").click(function () {
+        var vals = $(this).children('a').attr('href').split('#')[1]
+
+        var urls = location.href
+        urls = deleteUrl(urls, 'pageid')
+        urls = deleteUrl(urls, 'start_time')
+        urls = deleteUrl(urls, 'end_time')
+
+        if (/ecvType/.test(urls)) {
+            window.location = changeUrl(urls, 'ecvType', vals)
+        } else {
+            if (/\?/.test(urls)) {
+                window.location = urls + '&' +
+                    'ecvType=' + vals
+            } else {
+                window.location = urls + '?ecvType=' + vals
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
