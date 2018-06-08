@@ -41,7 +41,33 @@
 }
 
 
-
-#send_log .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
 	padding: 20px 8px !important;
+	border: none;
+}
+
+.close_btn{
+	right: 15px;
+	top: 0;
+}
+
+.close_btn:hover {
+	cursor: pointer;
+}
+
+label.error{
+	bottom: -30px !important;
+	left: 8px !important;
+}
+
+.item{
+	line-height: 35px;
+}
+
+.target_intro{
+	height: 400px;
+}
+
+.intro_right {
+	height: 400px;
 }

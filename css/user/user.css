@@ -1,6 +1,8 @@
 .user_des{
-	background: #000;
-	height: 120px;
+	background-image: url("../../images/user/top_banner.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 100px;
 	width: 100%;
 }
 
@@ -8,7 +10,7 @@
 	width: 74px;
 	height: 74px;
 	border-radius: 50%;
-	background: white;
+	background: rgba(255, 255, 255, 0.8);
 }
 
 .left_menu{
@@ -31,7 +33,7 @@
 }
 
 .left_menu .nav li.active .item a:hover{
-	color: #f5a52f;
+	color: #f5a52f !important;
 	
 }
 
@@ -41,6 +43,7 @@ text-decoration: none !important;
 
 .left_menu .nav li .item a{
 	font-weight: 600;
+	color: #666;
 	display: inline-block;
 	width: 100%;
 	height: 100%;
@@ -96,8 +99,8 @@ text-decoration: none !important;
 .table>thead>tr>td, 
 .table>thead>tr>th{
 	vertical-align: middle;
-	font-size: 13px;
-	padding: 18px;
+	font-size: 14px;
+	padding: 18px 0;
 }
 
 .table>thead>tr>th{
@@ -117,4 +120,25 @@ table tr td,th{
 
 .account_operate:hover{
 	cursor: pointer;
+}
+
+.form-group .input-group.date{
+	width: 200px;
+	height: 30px;
+}
+
+.form-group .input-group.date .form-control{
+	height: 30px;
+	border: 1px solid #eee;
+	border-right: 0;
+	webkit-box-shadow: none;
+	box-shadow: none;
+}
+.form-group .input-group.date .input-group-addon{
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-left: 0;
+}
+.form-group .input-group.date .btn{
+	height: 30px;
 }

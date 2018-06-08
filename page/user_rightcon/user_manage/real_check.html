@@ -6,21 +6,99 @@
 
     <link rel="stylesheet" type="text/css" href="../../../css/user/user.css">
     <link rel="stylesheet" href="../../../css/index.css">
-    <link rel="stylesheet" href="../../../css/lulu_UI/Tips.css">
-    <link rel="stylesheet" href="../../../css/lulu_UI/Select.css">
 
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../../../js/util/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
 
-    <script src="//qidian.gtimg.com/c/=/lulu/theme/peak/js/common/ui/Follow.js,/lulu/theme/peak/js/common/ui/ErrorTip.js,/lulu/theme/peak/js/common/ui/Validate.js"></script>
-    <script src="../../../js/lulu_UI/Select.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
     <script src="../../../js/util/pcasunzip.js"></script>
+
+    <script>
+        <!--手机号码验证-->
+        jQuery.validator.addMethod("checkMobile", function(value, element) {
+            var length = value.length;
+            var mobile = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+
+            return this.optional(element) || (length === 11 && mobile.test(value));
+        }, "请正确填写您的手机号码");
+
+        <!--身份证号码验证-->
+        jQuery.validator.addMethod("checkCardNum", function(value, element) {
+            var checkNum = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+
+            return this.optional(element) || (checkNum.test(value));
+        }, "请正确填写您的身份证号码");
+
+        <!--银行卡号码验证-->
+        jQuery.validator.addMethod("checkBankNum", function(value, element) {
+            var checkNum = /^([1-9]{1})(\d{14}|\d{18})$/;
+
+            return this.optional(element) || (checkNum.test(value));
+        }, "请正确填写您的银行卡号码");
+
+        // 表单验证
+        $().ready(function() {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#validateForm").validate({
+                rules: {
+                    real_name: "required",
+                    card_num: {
+                        required: true,
+                        checkCardNum: true
+                    },
+                    bank_name: "required",
+                    bank_space: "required",
+                    bank_num: {
+                        required: true,
+                        checkBankNum: true
+                    },
+                    province: "required",
+                    city: "required",
+                    mobile:{
+                        required: true,
+                        minlength: 11,
+                        maxlength:11,
+                        digits:true,
+                        number:true,
+                        checkMobile : true
+                    },
+                    phone_code: "required"
+                },
+                messages: {
+                    real_name: "不能为空",
+                    card_num: {
+                        required: "不能为空",
+                        checkCardNum: "身份证格式错误"
+                    },
+                    bank_num: {
+                        required: true,
+                        checkBankNum: "请正确填写您的银行卡号码"
+                    },
+                    mobile:  {
+                        required: "不能为空",
+                        minlength: "必须11位数字",
+                        maxlength:"必须11位数字",
+                        digits:"必须是数字"    ,
+                        number:"请输入有效数字",
+                        checkMobile : "手机号格式错误"
+                    },
+                    phone_code: "不能为空"
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                }
+            });
+        });
+
+    </script>
 </head>
 <body>
 <div class="bf_fff p-l-r-20">
@@ -31,7 +109,7 @@
     </div>
     <div class="blank30"></div>
     <div class="bg_fbfbfb mt clearfloat bdr3 bo_ea p20">
-        <form id="validateForm" class="bgwh fz_14 f_666" novalidate="novalidate ">
+        <form id="validateForm" class="bgwh fz_14 f_666" method="post">
             <div>
                 <div class="fz_14 f_333 pl20 b">
                     实名信息
@@ -41,8 +119,7 @@
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40" for="name">客户姓名：</label>
                         <div class="ovh col-sm-4 p0">
-                            <input id="name" type="text" class="ui-input form-control h40" placeholder="请输入客户姓名"
-                                   required="">
+                            <input id="name" type="text" class="ui-input form-control h40" placeholder="请输入客户姓名" name="real_name">
                         </div>
                     </div>
                     <div class="clearfix h58">
@@ -54,8 +131,8 @@
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40" for="paper_code">证件号码：</label>
                         <div class="ovh col-sm-4 p0">
-                            <input type="text" id="paper_code" class="ui-input  form-control h40" required=""
-                                   placeholder="请输入证件号码">
+                            <input type="text" id="paper_code" class="ui-input  form-control h40"
+                                   placeholder="请输入证件号码" name="card_num">
                         </div>
                     </div>
                 </div>
@@ -70,8 +147,8 @@
                 <div>
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40">开户银行：</label>
-                        <div class="ovh col-sm-4 p0 h40">
-                            <select  required="" class="w-100 selecte1">
+                        <div class=" col-sm-4 p0">
+                            <select  class="w-100 form-control h40" name="bank_name" required>
                                 <option value="">选择</option>
                                 <option value="1">中国银行</option>
                                 <option value="1">中国工商银行</option>
@@ -89,64 +166,61 @@
 
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40">省份：</label>
-                        <div class="ovh col-sm-4 p0 h40">
-                            <select  required="" class="w-100" name="user.province" id="province">
+                        <div class=" col-sm-4 p0">
+                            <select  class="w-100 form-control h40" name="province" id="province">
                             </select>
                         </div>
                     </div>
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40">城市：</label>
-                        <div class="ovh col-sm-4 p0 h40">
-                            <select  required="" class="w-100" name="user.city" id="city">
+                        <div class="col-sm-4 p0">
+                            <select  class="w-100 form-control h40" name="city" id="city" required>
                             </select>
                         </div>
                     </div>
                     <script language="javascript">
-                        new PCAS("user.province","user.city");
-                        $('#province').change(function () {
-                            setTimeout(function () {
-                                $('#city').selectMatch();
-                            },100)
-                        })
+                        new PCAS("province","city");
                     </script>
 
 
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40" for="bank_space">开户行：</label>
                         <div class="ovh col-sm-4 p0">
-                            <input id="bank_space" type="text" class="ui-input form-control h40" placeholder="请输入银行卡开户网点"
-                                   required="">
+                            <input id="bank_space" type="text" class="ui-input form-control h40" placeholder="请输入银行卡开户网点" name="bank_space">
                         </div>
                     </div>
 
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40" for="card_num">银行卡号：</label>
                         <div class="ovh col-sm-4 p0">
-                            <input id="card_num" type="text" class="ui-input form-control h40" placeholder="请输入银行卡号"
-                                   required="">
+                            <input id="card_num" type="text" class="ui-input form-control h40" placeholder="请输入银行卡号" name="bank_num">
                         </div>
                     </div>
                     <div class="clearfix h58">
                         <label class="col-sm-2 tr lh40" for="phone_num">手机号码：</label>
                         <div class="ovh col-sm-4 p0">
-                            <input type="text" id="phone_num" class="ui-input  form-control h40" required=""
-                                   placeholder="请输入手机号码">
+                            <input type="text" id="phone_num" class="ui-input  form-control h40"
+                                   placeholder="请输入手机号码" name="mobile">
                         </div>
                     </div>
                     <div class="clearfix h58">
                         <label for="phone_code" class="col-sm-2 tr lh40">短信动态码：</label>
                         <div class="col-sm-3ovh col-sm-4 p0">
                             <input type="text" class="ui-input h40 col-sm-7 bdr4 bdccc pl5" id="phone_code"
-                                   placeholder="请输入短信动态码" required="">
-                            <input type="button" class="col-sm-offset-1 col-sm-4 h40 bdccc bdr4 p5" value="获取验证码">
+                                   placeholder="请输入短信动态码" name="phone_code">
+                            <input type="button" class="col-sm-offset-1 col-sm-4 h40 bdccc bdr4 tc p0" value="获取验证码">
+                        </div>
+
+                    </div>
+                    <div class="clearfix col-sm-offset-2 p0">短信动态码由网易宝或发卡银行发送，请耐心等待。</div>
+                    <div class="clearfix mt20">
+                        <div class="col-sm-offset-2 col-sm-4 p0">
+                            <input type="submit" id="validateSubmit" class="btn w-100 h40 theme_bg f_white fz_16 lh30" value="确定开户">
                         </div>
                     </div>
-                    <div class="clearfix mt20">
-                        <div class="cell col-sm-offset-2 col-sm-3 p0">
-                            <input type="submit" id="validateSubmit" class="clip" hidden="hidden">
-                            <label for="validateSubmit"
-                                   class="ui-button ui-button-primary btn w-100 h40 theme_bg f_white fz_16 lh30">确认开户</label>
-                        </div>
+                    <div class="blank20"></div>
+                    <div class="clearfix col-sm-offset-2 p0">
+                        点击确定开户表示您同意 <span class="second_theme_text">《浙商银行委托扣款业务服务协议》 </span><br><span class="second_theme_text">《浙商银行网络借贷交易资金存管业务三方协议》</span>
                     </div>
                 </div>
             </div>
@@ -155,45 +229,6 @@
     </div>
 </div>
 
-<script>
-
-    $('select').selectMatch();
-
-
-    new Validate($('form'),
-        function () {
-            alert('全部验证通过');
-        },
-        {
-            validate: [
-                {
-                    id: 'name',
-                    ignore: '姓名不能为空'
-                },
-                {
-                    id: 'paper_code',
-                    ignore: '证件号码不能为空'
-                },
-                {
-                    id: 'bank_space',
-                    ignore: '银行卡开户网点不能为空'
-                },
-                {
-                    id: 'card_num',
-                    ignore: '银行号码不能为空'
-                },
-                {
-                    id: 'phone_num',
-                    ignore: '手机号码 不能为空'
-                },
-                {
-                    id: 'phone_code',
-                    ignore: '验证码不能为空'
-                }
-            ]
-        }
-    );
-</script>
 
 </body>
 </html>

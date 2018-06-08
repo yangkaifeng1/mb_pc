@@ -44,3 +44,13 @@ function deleteUrl(t, e){
     }
     return r=n.split("="), r[0]==e?t.substr(0, t.indexOf("?")):t
 }
+
+//勾选框状态改变
+$("input[type='checkbox']").change(function () {
+    console.log('11')
+    if ($("input[type='checkbox']").is(':checked')) {
+        $("input[type='checkbox']:checked + label").addClass('check_select');
+    } else {
+        $("input[type='checkbox'] + label").removeClass('check_select');
+    }
+})

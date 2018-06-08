@@ -1,0 +1,224 @@
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    content: "";
+}
+
+.clear {
+    clear: both;
+}
+
+/* float */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.account-box {
+    background: #fff;
+    padding: 0 35px 25px 25px;
+}
+
+.account-title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.f-btn-fhby {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 12px 20px 0;
+}
+
+.f-riqi {
+    width: 110px;
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    display: block;
+}
+
+.f-rili-table tbody td {
+    background: #fff;
+    position: relative;
+}
+
+.f-rili-table tbody tr {
+    border-bottom: 1px dashed #ebebeb;
+}
+
+.f-rili-table .f-today {
+    color: #f5a52f;
+}
+
+.f-rili-table .f-on {
+    background-color: cornflowerblue;
+    color: #fff;
+}
+
+.f-number {
+    cursor: pointer;
+}
+
+.f-rili-table {
+    width: 100%;
+}
+
+.f-rili-th {
+    float: left;
+    width: 14.25%;
+    text-align: center;
+    line-height: 46px;
+    height: 46px;
+    background-color: #F9EADE;
+    color: #333;
+}
+.f-rili-th{
+    border-top: 1px solid #ebebeb;
+}
+
+.f-rili-th:nth-child(1){
+    border-left: 1px solid #ebebeb;
+}
+
+.f-rili-th:nth-child(7){
+    border-right: 1px solid #ebebeb;
+}
+
+.f-tbody{
+    /*border: 1px solid #ebebeb;*/
+    /*border-top: 0;*/
+}
+
+.f-td{
+    border-top: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    float: left;
+    width: 14.25%;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    position: relative;
+}
+
+.f-td:nth-child(7n){
+    border-right: 1px solid #ebebeb;
+}
+
+.f-td:nth-child(n+36){
+    border-bottom: 1px solid #ebebeb;
+}
+
+.f-yuan {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 13px;
+    left: 50%;
+    margin-left: 10px;
+    background: url(../images/yuan.png) no-repeat center;
+}
+
+.f-table-msg {
+    position: absolute;
+    z-index: 2;
+    top: 34px;
+    left: 50%;
+    margin-left: -120px;
+    width: 280px;
+    background: url(../images/bg-msg.png) no-repeat bottom;
+    line-height: 55px;
+    height: 46px;
+    text-align: center;
+    display: none;
+    color: #666;
+}
+
+.f-lastMonth, .f-nextMounth{
+    background: #f5f5f5;
+}
+
+.point {
+    left: 28px;
+    bottom: 5px;
+}
+
+.sign_box{
+    background-image: url("../../images/score/sign_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 322px;
+}
+
+.sign_header{
+    padding: 30px 100px;
+}
+
+.packets_box{
+    padding: 0 55px;
+}
+
+.little_red{
+    height: 108px;
+    background-image: url("../../images/score/little_red.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.little_interest{
+    height: 108px;
+    background-image: url("../../images/score/little_interest.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.big_red{
+    height: 108px;
+    background-image: url("../../images/score/big_red.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 24px;
+}
+
+.big_interest{
+    height: 108px;
+    background-image: url("../../images/score/big_interest.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 42px;
+}
+
+.packets_text{
+    padding-top: 60px;
+}
+
+.big_packets_text{
+    padding-top: 88px;
+}
+
+.close_btn{
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}

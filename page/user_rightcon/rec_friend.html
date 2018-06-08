@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邀请好友</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../../css/index.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="w-100 pr col-sm-12 p0" style="min-width: 1200px">
+
+    <img src="../../images/user/rec_bg.png" alt="" class="w-100">
+    <div class="ps col-sm-6 col-sm-offset-3 tc" style="top: 31%;">
+        <img src="../../images/user/rec_src.png" alt="" class="w-90">
+        <div class="ps col-sm-12" style="top: 15%;">
+            <div class="tl f_white col-sm-12 rec_code_box">
+                <span class="fz_16 col-sm-4 p0 tr pr20">你的邀请码：</span>
+                <span class="fz_22">13666666666</span>
+            </div>
+            <div class="tl f_white  col-sm-12">
+                <span class="fz_16 col-sm-4 p0 tr pr20">你的推广链接：</span>
+                <input type="text" value="https://www.zjmb158.com" class="f_333 col-sm-5 lh26 url">
+                <div class="btn lh14 copyUrl" style="background: #ff8a80">复制链接</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script language="javascript">
+    $('.copyUrl').click(function () {
+        var url = $('.url').val();
+        $('.url').select();
+        document.execCommand('copy', true);
+        alert("复制链接成功！");
+    })
+</script>
+
+</body>
+</html>

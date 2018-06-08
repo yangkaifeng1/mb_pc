@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="renderer" content="webkit">
+    <meta name="Generator"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>找回密码 - 满宝金服</title>
+    <meta name="keywords" content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融"/>
+    <meta name="description"
+          content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/find_pwd/find_pwd.css">
+
+    <script src="../../../js/util/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+
+    <script type="text/javascript">
+
+        $().ready(function() {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#validateForm1").validate({
+                rules: {
+                    phone_code: "required"
+                },
+                messages: {
+                    phone_code:  "不能为空"
+                },
+                submitHandler: function(form){
+                    $.ajax({
+                        cache : true,
+                        type : "POST",
+                        url : "merchant",
+                        data : $('#mechantForm').serialize(),
+                        async : false,
+                        error : function(data) {
+//                            $(this).hide()
+//                            $('.step_two').show()
+//                            $('.pro_two')
+                        },
+                        success : function(data) {
+
+                        }
+                    });
+                },
+            });
+        });
+
+        $().ready(function() {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#validateForm2").validate({
+                rules: {
+                    real_name: "required",
+                    card_num: "required"
+                },
+                messages: {
+                    real_name:  "不能为空",
+                    card_num:  "不能为空"
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                }
+            });
+        });
+
+        $().ready(function() {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#validateForm3").validate({
+                rules: {
+                    pay_password: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 16
+                    },
+                    confirm_pay_password: {
+                        required: true,
+                        equalTo: "#pay_password"
+                    }
+                },
+                messages: {
+                    pay_password: {
+                        required: "请输入密码",
+                        minlength: "密码长度不能小于 6 ",
+                        maxlength: "密码长度不能大于 16 "
+                    },
+                    confirm_pay_password: {
+                        required: "请输入密码",
+                        equalTo: "两次密码输入不一致"
+                    }
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                }
+            });
+        });
+
+
+
+    </script>
+</head>
+
+<body class="p0">
+
+
+
+<!-- 详细描述 -->
+    <div class="clearfloat">
+        <div class="blank10"></div>
+        <div class="bddf">
+            <div class="headers p15">
+                <div class="blank10"></div>
+                <span class="icon_line dis_ib"></span>
+                <span class="fz_18 f_333 ml15 dis_ib icon_text">找回登录密码</span>
+                <div class="blank10"></div>
+                <div class="bte5"></div>
+            </div>
+            <div class="blank30"></div>
+
+
+            <!--步骤条-->
+            <div class="col-sm-6 col-sm-offset-3 tc p0 h58 fz_14">
+                <div class="col-sm-3 p0 pr pro_one">
+                    <div class="w-100 h5 theme_bg ps"></div>
+                    <div class="f_white theme_bg bdr-50 dis_ib w24 lh24 ps step_num">1</div>
+                    <div class="w-100 tc ps step_con theme_text">验证手机</div>
+                </div>
+                <div class="col-sm-3 p0 pr pro_two">
+                    <div class="w-100 h5 bg_e3 ps"></div>
+                    <div class="f_white bg_e3 bdr-50 dis_ib w24 lh24 ps step_num">2</div>
+                    <div class="w-100 tc ps step_con theme_text">验证身份</div>
+                </div>
+                <div class="col-sm-3 p0 pro_three">
+                    <div class="w-100 h5 bg_e3 ps"></div>
+                    <div class="f_white bg_e3 bdr-50 dis_ib w24 lh24 ps step_num">3</div>
+                    <div class="w-100 tc ps step_con f_666">修改交易密码</div>
+                </div>
+                <div class="col-sm-3 p0 pro_four">
+                    <div class="w-100 h5 bg_e3 ps"></div>
+                    <div class="f_white bg_e3 bdr-50 dis_ib w24 lh24 ps step_num">4</div>
+                    <div class="w-100 tc ps step_con f_666">修改成功</div>
+                </div>
+            </div>
+
+            <div class="blank30"></div>
+            <!--步骤1 验证手机-->
+            <div class="h220 step_one">
+                <form id="validateForm1" class="bgwh fz_14 f_666 cmxform" action="" method="post">
+                    <div class="clearfix h58 tc">
+                        <label class="col-sm-offset-3 col-sm-2 tr lh40">手机号码：</label>
+                        <div class="col-sm-3 p0 tl lh40 b">
+                            135****2111
+                        </div>
+                    </div>
+
+                    <div class="clearfix h58">
+                        <label for="phone_code" class="col-sm-offset-3 col-sm-2 tr lh40">短信动态码：</label>
+                        <div class="col-sm-3 ovh p0">
+                            <input type="text" class="h40 col-sm-7 bdr4 bdccc pl5 pr5 fz_12" id="phone_code"
+                                   placeholder="请输入短信动态码" name="phone_code">
+                            <input type="button" class="col-sm-offset-1 col-sm-4 h40 bg_e3 bdr4 p5 fz_12" value="获取验证码">
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="cell col-sm-offset-5 col-sm-3 p0">
+                            <input type="submit" id="validateSubmit1" class="btn w-100 h40 theme_bg f_white fz_16 lh30">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--步骤2 验证身份-->
+            <div class="h220 step_two hide_dis">
+                <form id="validateForm2" class="bgwh fz_14 f_666 cmxform" method="post">
+                    <div class="clearfix h58 tc">
+                        <label class="col-sm-offset-3 col-sm-2 tr lh40" for="real_name">姓名：</label>
+                        <div class="ovh col-sm-3 p0">
+                            <input id="real_name" type="text" class="form-control h40" placeholder="请输入姓名" name="real_name">
+                        </div>
+                    </div>
+
+                    <div class="clearfix h58">
+                        <label for="card_num" class="col-sm-offset-3 col-sm-2 tr lh40">身份证：</label>
+                        <div class="ovh col-sm-3 p0">
+                            <input id="card_num" type="text" class="form-control h40" placeholder="请输入身份证号码" name="card_num">
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="cell col-sm-offset-5 col-sm-3 p0">
+                            <input type="submit" id="validateSubmit2" class="btn w-100 h40 theme_bg f_white fz_16 lh30">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--步骤3 修改交易密码-->
+            <div class="h220 step_three hide_dis">
+                <form id="validateForm3" class="bgwh fz_14 f_666 cmxform" method="post">
+                    <div class="clearfix h58 tc">
+                        <label class="col-sm-offset-3 col-sm-2 tr lh40" for="pay_password">设置新交易密码：</label>
+                        <div class="ovh col-sm-3 p0">
+                            <input id="pay_password" type="password" class="form-control h40" placeholder="请输入新交易密码" name="pay_password">
+                        </div>
+                    </div>
+
+                    <div class="clearfix h58">
+                        <label for="confirm_pay_password" class="col-sm-offset-3 col-sm-2 tr lh40">确定新交易密码：</label>
+                        <div class="ovh col-sm-3 p0">
+                            <input id="confirm_pay_password" type="password" class="form-control h40" placeholder="请确认新交易密码" name="confirm_pay_password">
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="cell col-sm-offset-5 col-sm-3 p0">
+                            <input type="submit" id="validateSubmit3" class="btn w-100 h40 theme_bg f_white fz_16 lh30">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--步骤4 修改成功-->
+            <div class="h220 step_four hide_dis">
+                <div class="w-100 tc fz_26 f_4cd649 tc">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    <div class="blank20"></div>
+                    <div class="">修改成功</div>
+                </div>
+                <div class="blank40"></div>
+                <div class="clearfix tc">
+                    <div class="cell p0 w-25">
+                        <input type="submit" id="validateSubmit2" class="clip" hidden="hidden">
+                        <label for="validateSubmit2"
+                               class="ui-button ui-button-primary btn w-100 h40 theme_bg f_white fz_16 lh30">下一步</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

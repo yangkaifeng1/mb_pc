@@ -1,7 +1,6 @@
 .form_container {
     width: 100%;
     background: url('../../images/log_reg/banner.jpg') no-repeat;
-    background-size: 100% 100%;
     padding: 120px 0;
 }
 
@@ -9,7 +8,7 @@
 	background: #fff;
 	float: right;
     width: 400px;
-    min-height: 385px;
+    min-height: 365px;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
@@ -24,7 +23,7 @@
 
 .input_box input {
     height: 40px;
-    padding-left: 50px;
+    padding-left: 40px;
 }
 
 .form_box .input_box .get_code{
@@ -35,6 +34,11 @@
     padding: 5px;
     height: 36px;
 }
+
+.form_box .input_box .get_code:hover{
+    cursor: pointer;
+}
+
 
 .err_msg, .success_msg, .had_msg, .hide_input, .hide_progress, .progress_box{
 	display: none;
@@ -57,6 +61,8 @@
 }
 
 .password_eye{
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 25px;
     top: 10px;
@@ -72,14 +78,24 @@
     margin-bottom:0; 
 }
 .form_box .input_box .input_icon{
-    padding: 13px;
+    padding: 11px;
     z-index: 5;
     position: absolute;
-    height: 38px;
     width: 38px;
-    background: #ccc;
-    top: 1px;
+    top: 0px;
     left: 16px;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+}
+
+.cannot{
+    color: #999;
+}
+
+label.error{
+    bottom: -30px !important;
+    left: 16px !important;
+}
+
+input[type='checkbox'] + label.error{
+    bottom: -20px !important;
+    left: 32px !important;
 }

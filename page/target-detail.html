@@ -21,6 +21,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+    <script src="../js/util/util.js"></script>
 </head>
 
 <body class="p0">
@@ -64,8 +65,9 @@
         <div class="main_bar wrap">
             <div class="logo mr15 mt10">
                 <a class="link f_l" href="/">
-                    <span style='display:inline-block; width:219px; height:66px; background:url(https://www.zjmb158.com/public/attachment/201710/23/14/59ed8d98a7e1c.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=https://www.zjmb158.com/public/attachment/201710/23/14/59ed8d98a7e1c.png, sizingMethod=scale);_background-image:none;'
-                          title='满宝金服'></span>
+                    <span class="logo">
+                        <img src="../images/index/logo.png" alt="">
+                    </span>
                 </a>
             </div>
             <!--加载菜单-->
@@ -101,7 +103,7 @@
                             借款编号#MER2018041001
                         </div>
                     </div>
-                    <div class="blank20"></div>
+                    <div class="blank30"></div>
                     <div class="target_shownum col-sm-12">
                         <div class="col-sm-6">
                             <div class="fz_40 theme_text">
@@ -114,7 +116,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div>
-                                <span class="fz_40 theme_text dis_ib">15</span>
+                                <span class="fz_40 theme_text dis_ib tar_days">15</span>
                                 <span class="fz_18 f_999 dis_ib" style="vertical-align: baseline">天</span>
                             </div>
                             <div class="blank15"></div>
@@ -126,7 +128,7 @@
                 </div>
 
                 <div class="blank20"></div>
-                <div class="bte3 mr15 ml15"></div>
+                <div class="bte5 ml30 mr30"></div>
                 <div class="blank20"></div>
 
                 <div class="intro_body clearfloat">
@@ -137,28 +139,21 @@
                                 <span class="fz_14 f_333">60,000.00元</span>
                             </div>
 
-                            <div class="blank5"></div>
-
                             <div class="item">
                                 <span class="fz_14 f_999">剩余可投：</span>
                                 <span class="fz_14 f_333">2,800.00元</span>
                             </div>
-
-                            <div class="blank5"></div>
 
                             <div class="item">
                                 <span class="fz_14 f_999">还款方式：</span>
                                 <span class="fz_14 f_333">到期换本息</span>
                             </div>
 
-                            <div class="blank5"></div>
-
                             <div class="item">
                                 <span class="fz_14 f_999">起息时间：</span>
                                 <span class="fz_14 f_333">满标复审计息</span>
                             </div>
 
-                            <div class="blank5"></div>
 
                         </div>
                         <div class="left col-sm-6">
@@ -167,35 +162,28 @@
                                 <span class="fz_14 f_333">100元起投</span>
                             </div>
 
-                            <div class="blank5"></div>
-
                             <div class="item">
                                 <span class="fz_14 f_999">单笔限购：</span>
                                 <span class="fz_14 f_333">不限购</span>
                             </div>
-
-                            <div class="blank5"></div>
 
                             <div class="item">
                                 <span class="fz_14 f_999">发标时间：</span>
                                 <span class="fz_14 f_333">2018-04-10 09:30</span>
                             </div>
 
-                            <div class="blank5"></div>
-
                             <div class="item">
                                 <span class="fz_14 f_999">截止时间：</span>
                                 <span class="fz_14 f_333">00天 12小时 42分 23秒</span>
                             </div>
-
-                            <div class="blank5"></div>
                         </div>
 
                     </div>
 
+                    <div class="blank10"></div>
                     <div class="col-sm-12">
                         <span class="fz_14 f_999 f_l pl15">募集进度：</span>
-                        <div class="progress w500 mt10">
+                        <div class="progress w500 mt10 h10">
                             <div class="progress-bar" style="width: 10%; background: #eee; float: right">
                             </div>
                         </div>
@@ -204,7 +192,7 @@
                 </div>
 
             </div>
-            <div class="intro_right col-sm-4 bg_f9f9f9 fz_14 ">
+            <div class="intro_right col-sm-4 bg_f9f9f9 fz_14 hide_dis">
                 <div class="blank30"></div>
                 <div class="tc pr">
                     <div class="fz_16 f_333 pr50">可用余额（元）</div>
@@ -212,7 +200,8 @@
                 </div>
                 <div class="blank30"></div>
                 <div class="fz_36 theme_text tc">1000.00</div>
-                <div class="blank30"></div>
+                <div class="blank20"></div>
+                <div class="blank15"></div>
                 <form class="form-inline">
                     <div class="form-group col-sm-12">
                         <label for="invest_money" class="f_999 col-sm-4 mt5 pr5 tr">投资金额：</label>
@@ -230,28 +219,47 @@
                         <!-- 红包模态框 -->
                         <div class="modal fade p0" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                              aria-hidden="true">
+                            <div class="blank50"></div>`
+                            <div class="blank50"></div>
                             <div class="w950 bf_fff">
                                 <!-- 分类头部 -->
-                                <ul class="nav nav-tabs bd0  tc">
-                                    <li class="active w180">
-                                        <a href="#red_reward" data-toggle="tab">
-                                            红包（<span>5</span>）
-                                        </a>
-                                    </li>
-                                    <li class="w180">
-                                        <a href="#raise_reward" data-toggle="tab">
-                                            加息券（<span>5</span>）
-                                        </a>
-                                    </li>
+                                <!--<ul class="nav nav-tabs bd0  tc pr">-->
+                                    <!--<li class="active w180">-->
+                                        <!--<a href="#red_reward" data-toggle="tab">-->
+                                            <!--红包（<span>5</span>）-->
+                                        <!--</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="w180">-->
+                                        <!--<a href="#raise_reward" data-toggle="tab">-->
+                                            <!--加息券（<span>5</span>）-->
+                                        <!--</a>-->
+                                    <!--</li>-->
+                                    <!--<div data-dismiss="modal" aria-label="Close" class="ps w21 close_btn">-->
+                                        <!--&lt;!&ndash;<span aria-hidden="true"></span>&ndash;&gt;-->
+                                        <!--<img src="../images/icon/close.png" alt="" class="w-100">-->
+                                    <!--</div>-->
+                                <!--</ul>-->
+                                <ul class="nav nav-tabs bd0 tc pr">
+                                    <li class="active w180"><a href="#red_reward"
+                                                               data-toggle="tab"> 红包（<span>${countHongbao }</span>）
+                                    </a></li>
+                                    <li class="w180"><a href="#raise_reward"
+                                                        data-toggle="tab"> 加息券（<span>${countJiaxi }</span>）
+                                    </a></li>
+                                    <div data-dismiss="modal" aria-label="Close" class="ps w21 close_btn">
+                                        <!--<span aria-hidden="true"></span>-->
+                                        <img src="../images/icon/close.png" alt="" class="w-100">
+                                    </div>
+
                                 </ul>
                                 <!-- 分类内容 -->
-                                <div class="tab-content">
+                                <div class="tab-content packets_box">
                                     <!-- 红包 -->
                                     <div class="tab-pane fade in active" id="red_reward">
                                         <div class="clearfloat p_5_35">
 
-                                            <div class="col-sm-12  pre-scrollable">
-                                                <div class="col-sm-4 packets_item red_packets fz_14">
+                                            <div class="col-sm-12 h540">
+                                                <div class="col-sm-4 packets_item unuse_packets fz_14">
                                                     <div>
                                                         <div class="hide packets_id">11</div>
                                                         <div class="blank10"></div>
@@ -260,64 +268,11 @@
                                                         <div class="fz_24 tc">￥ <span class="fz_50">16.00</span></div>
                                                     </div>
                                                     <div class="fz_12 lh16 p_15_20">
-                                                        <div>仅限购买≥15天项目</div>
-                                                        <div>任意金额使用</div>
+                                                        <div>仅限购买≥<span  class="days">10</span>天项目</div>
+                                                        <div>购买金额≥<span  class="moneys">1200</span>使用</div>
                                                         <div>有效期至:2018-05-18</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-4 packets_item red_packets">
-                                                    <div>
-                                                        <div class="blank10"></div>
-                                                        <div class="pl20">新手红包</div>
-                                                        <div class="blank10"></div>
-                                                        <div class="fz_24 tc">￥ <span class="fz_50">15.00</span></div>
-                                                    </div>
-                                                    <div class="fz_12 lh16 p_15_20">
-                                                        <div>仅限购买≥15天项目</div>
-                                                        <div>任意金额使用</div>
-                                                        <div>有效期至:2018-05-18</div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4  packets_item red_packets">
-                                                    <div>
-                                                        <div class="blank10"></div>
-                                                        <div class="pl20">新手红包</div>
-                                                        <div class="blank10"></div>
-                                                        <div class="fz_24 tc">￥ <span class="fz_50">20.00</span></div>
-                                                    </div>
-                                                    <div class="fz_12 lh16 p_15_20">
-                                                        <div>仅限购买≥15天项目</div>
-                                                        <div>任意金额使用</div>
-                                                        <div>有效期至:2018-05-18</div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4  packets_item unuse_packets">
-                                                    <div>
-                                                        <div class="blank10"></div>
-                                                        <div class="pl20">新手红包</div>
-                                                        <div class="blank10"></div>
-                                                        <div class="fz_24 tc">￥ <span class="fz_50">15.00</span></div>
-                                                    </div>
-                                                    <div class="fz_12 lh16 p_15_20">
-                                                        <div>仅限购买≥15天项目</div>
-                                                        <div>任意金额使用</div>
-                                                        <div>有效期至:2018-05-18</div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4  packets_item unuse_packets">
-                                                    <div>
-                                                        <div class="blank10"></div>
-                                                        <div class="pl20">新手红包</div>
-                                                        <div class="blank10"></div>
-                                                        <div class="fz_24 tc">￥ <span class="fz_50">15.00</span></div>
-                                                    </div>
-                                                    <div class="fz_12 lh16 p_15_20">
-                                                        <div>仅限购买≥15天项目</div>
-                                                        <div>任意金额使用</div>
-                                                        <div>有效期至:2018-05-18</div>
-                                                    </div>
-                                                </div>
-
                                             </div>
                                         </div>
 
@@ -330,49 +285,138 @@
 
                                     <!-- 加息券 -->
                                     <div class="tab-pane fade" id="raise_reward">
+                                        <div class="clearfloat p_5_35">
+                                            <div class="col-sm-12 h360" style="overflow: auto;">
+                                                <div class="col-sm-4  packets_item unuse_packets">
+                                                    <div>
+                                                        <div class="blank10"></div>
+                                                        <div class="pl20">新手加息券</div>
+                                                        <div class="blank10"></div>
+                                                        <div class="fz_24 tc">
+                                                            <span class="fz_50">2%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fz_12 lh16 p_15_20">
+                                                        <div>仅限购买≥<span  class="days">20</span>天项目</div>
+                                                        <div>购买金额≥<span  class="moneys">2000</span>使用</div>
+                                                        <div class="youxiaoqi">有效期至:
+                                                            <fmt:formatDate type="both" dateStyle="medium"
+                                                                            timeStyle="medium"
+                                                                            value="${jiaxi.endDate }"/>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-4  packets_item unuse_packets">
+                                                    <div>
+                                                        <div class="blank10"></div>
+                                                        <div class="pl20">新手加息券</div>
+                                                        <div class="blank10"></div>
+                                                        <div class="fz_24 tc">
+                                                            <span class="fz_50">2%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fz_12 lh16 p_15_20">
+                                                        <div>仅限购买≥<span  class="days">10</span>天项目</div>
+                                                        <div>任意金额使用</div>
+                                                        <div class="youxiaoqi">有效期至:
+                                                            <fmt:formatDate type="both" dateStyle="medium"
+                                                                            timeStyle="medium"
+                                                                            value="${jiaxi.endDate }"/>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- 红包加息券的选择 -->
-                                <script type="text/javascript">
+                                <!--<script type="text/javascript">-->
 
-                                    $('.packets_item').click(function () {
-                                        if ($(this).hasClass('red_packets')) {
-                                            $('.checked_packets').removeClass('checked_packets').addClass('red_packets')
-                                            $(this).removeClass('red_packets').addClass('checked_packets')
-                                            var packet_text = $(this).find('.fz_50').text()
-                                            var packets_id =  $(this).find('.packets_id').attr(name)
-                                            var packets_val=  $(this).find('.packets_id').val()
-                                            $('.packets_name').val(packet_text + '元红包')
-                                            $('.packets_subId').attr('name', packets_id)
-                                            $('.packets_subId').val(packets_val)
-                                        } else if ($(this).hasClass('checked_packets')) {
-                                            // $('packets_item').removeClass('checked_packets')
-                                            $(this).removeClass('checked_packets').addClass('red_packets')
-                                        }
-                                    })
-                                </script>
+                                    <!--$('.packets_item').click(function () {-->
+                                        <!--if ($(this).hasClass('red_packets')) {-->
+                                            <!--$('.checked_packets').removeClass('checked_packets').addClass('red_packets')-->
+                                            <!--$(this).removeClass('red_packets').addClass('checked_packets')-->
+                                            <!--var packet_text = $(this).find('.fz_50').text()-->
+                                            <!--var packets_id =  $(this).find('.packets_id').attr(name)-->
+                                            <!--var packets_val=  $(this).find('.packets_id').val()-->
+                                            <!--$('.packets_name').val(packet_text + '元红包')-->
+                                            <!--$('.packets_subId').attr('name', packets_id)-->
+                                            <!--$('.packets_subId').val(packets_val)-->
+                                        <!--} else if ($(this).hasClass('checked_packets')) {-->
+                                            <!--// $('packets_item').removeClass('checked_packets')-->
+                                            <!--$(this).removeClass('checked_packets').addClass('red_packets')-->
+                                        <!--}-->
+                                    <!--})-->
+                                <!--</script>-->
+
+
                             </div>
                         </div>
                     </div>
-                    <div class="blank15"></div>
+                    <div class="blank20"></div>
                     <div class="pr col-sm-12">
                         <div class="col-sm-4 tr f_999 pr5">预计收益：</div>
                         <div class="col-sm-7 pl5">
-                            <span class="f_ef5950">10.00 + 2.00 &nbsp;</span><span class="f_999"> 元</span>
+                            <span class="f_ef5950 earns">0.00 </span>
+                            <span class="hide_dis f_ef5950 add_sign">+</span>
+                            <span class="f_ef5950 adds"></span>
+                            <span class="f_999">&nbsp; 元</span>
                         </div>
                     </div>
+                    <div class="blank20"></div>
+                    <div class="blank5"></div>
                     <div class="checkbox fz_12 ml53">
-                        <label>
-                            <input type="checkbox" class="mt7 theme_text"> 我已阅读并同意
-                            <a href="" class="second_theme_text">《风险告知书》</a>
-                        </label>
+                        <input type="checkbox" class="mt7 theme_text hide_dis" checked="checked" id="checkAgree">
+                        <label class="ui-checkbox dis_ib check_select" for="checkAgree"></label>
+                        <label for="checkAgree">我已阅读并同意<a href="" class="second_theme_text">《风险告知书》</a></label>
                     </div>
+                    <div class="blank5"></div>
                     <div class="ml53">
                         <button type="submit" class="btn fz_18 col-sm-10 theme_bg f_white">立即投资</button>
                     </div>
                 </form>
             </div>
+
+            <!--满标待审核-->
+            <div class="intro_right col-sm-4 bg_f9f9f9 check">
+                <div class="blank50"></div>
+                <div class="blank20"></div>
+                <div class="w400 tc">
+                    <img src="../images/target-detail/check.png" alt="">
+                </div>
+                <div class="blank50"></div>
+                <div class="blank15"></div>
+                <div class="btn theme_bg col-sm-offset-1 col-sm-10 fz_18 f_white">投资其他项目</div>
+            </div>
+
+            <!--&lt;!&ndash;还款中&ndash;&gt;-->
+            <!--<div class="intro_right col-sm-4 bg_f9f9f9 check">-->
+                <!--<div class="blank50"></div>-->
+                <!--<div class="blank20"></div>-->
+                <!--<div class="w400 tc">-->
+                    <!--<img src="../images/target-detail/repaying.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="blank50"></div>-->
+                <!--<div class="blank15"></div>-->
+                <!--<div class="btn theme_bg col-sm-offset-1 col-sm-10 fz_18 f_white">投资其他项目</div>-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash;还款完毕&ndash;&gt;-->
+            <!--<div class="intro_right col-sm-4 bg_f9f9f9 check">-->
+                <!--<div class="blank50"></div>-->
+                <!--<div class="blank20"></div>-->
+                <!--<div class="w400 tc">-->
+                    <!--<img src="../images/target-detail/repayed.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="blank50"></div>-->
+                <!--<div class="blank15"></div>-->
+                <!--<div class="btn theme_bg col-sm-offset-1 col-sm-10 fz_18 f_white">投资其他项目</div>-->
+            <!--</div>-->
+
+
         </div>
 
         <div class="blank20"></div>
@@ -389,10 +433,10 @@
             </ul>
             <!-- 标签内容 -->
             <div id="myTabContent" class="tab-content">
-                <!-- 项目信息 -->
+                <!--&lt;!&ndash; 项目信息 &ndash;&gt;-->
                 <div class="tab-pane fade in active pl30 pr30" id="base_msg">
                     <div class="blank30"></div>
-                    <!-- 项目简介 -->
+                    <!--&lt;!&ndash; 项目简介 &ndash;&gt;-->
                     <div>
                         <div class="msg_hd theme_text">
                             <div class="box-t  f16"><i class="iconfont pr10"></i>&nbsp;项目简介</div>
@@ -446,7 +490,7 @@
                         </div>
                     </div>
                     <div class="blank30"></div>
-                    <!-- 借款合同 -->
+                    <!--&lt;!&ndash; 借款合同 &ndash;&gt;-->
                     <div>
                         <div class="msg_hd theme_text">
                             <div class="box-t  f16"><i class="iconfont pr10"></i>&nbsp;借款合同</div>
@@ -455,45 +499,31 @@
                         <div class="box-bd clearfloat">
                             <ul id="mortgage_contract">
                                 <li class="f_l mr10 bdd">
-                                    <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda3468b93c_800x800.jpg"
-                                       rel="lightbox-myMor" title="合同A1">
                                         <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda3468b93c_100x100.jpg"
                                              style="height: 100px" title="合同A1" alt="合同A1">
-                                    </a>
                                 </li>
                                 <li class="f_l mr10 bdd">
-                                    <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda35006cf9_800x800.jpg"
-                                       rel="lightbox-myMor" title="合同A2">
                                         <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda35006cf9_100x100.jpg"
                                              style="height: 100px" title="合同A2" alt="合同A2">
-                                    </a>
+
                                 </li>
                                 <li class="f_l mr10 bdd">
-                                    <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda36fe97d2_800x800.jpg"
-                                       rel="lightbox-myMor" title="合同B1">
                                         <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda36fe97d2_100x100.jpg"
                                              style="height: 100px" title="合同B1" alt="合同B1">
-                                    </a>
                                 </li>
                                 <li class="f_l mr10 bdd">
-                                    <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda377e78bc_800x800.jpg"
-                                       rel="lightbox-myMor" title="合同B2">
                                         <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda377e78bc_100x100.jpg"
                                              style="height: 100px" title="合同B2" alt="合同B2">
-                                    </a>
                                 </li>
                                 <li class="f_l mr10 bdd">
-                                    <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda37ed455e_800x800.jpg"
-                                       rel="lightbox-myMor" title="合同B3">
                                         <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda37ed455e_100x100.jpg"
                                              style="height: 100px" title="合同B3" alt="合同B3">
-                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="blank30"></div>
-                    <!-- 抵押物 -->
+                    <!--&lt;!&ndash; 抵押物 &ndash;&gt;-->
                     <div>
                         <div class="msg_hd theme_text">
                             <div class="box-t  f16"><i class="iconfont pr10"></i>&nbsp;抵押物</div>
@@ -557,7 +587,7 @@
                     <div class="blank30"></div>
                 </div>
 
-                <!-- 风险控制 -->
+                <!--&lt;!&ndash; 风险控制 &ndash;&gt;-->
                 <div class="tab-pane fade pl30 pr30" id="danger_control">
                     <div class="blank30"></div>
                     <div class="msg_hd theme_text">
@@ -599,10 +629,10 @@
 
                 </div>
 
-                <!-- 投标记录 -->
+                <!--&lt;!&ndash; 投标记录 &ndash;&gt;-->
                 <div class="tab-pane fade pl30 pr30 f_333 fz_14" id="send_log">
                     <table class="table tc">
-                        <!-- <caption>Optional table caption.</caption> -->
+                        <!--&lt;!&ndash; <caption>Optional table caption.</caption> &ndash;&gt;-->
                         <thead>
                         <tr class="tc">
                             <th class="tc"></th>
@@ -647,8 +677,39 @@
 
                 <!-- 还款记录 -->
                 <div class="tab-pane fade pl30 pr30" id="back_log">
-
+                    <div class="blank20"></div>
+                    <table class="table tc fz_14">
+                        <tbody>
+                        <tr>
+                            <td>期数</td>
+                            <td>到期本金</td>
+                            <td>到期利息</td>
+                            <td>到期本息</td>
+                            <td>预期还款日</td>
+                            <td>实际还款日</td>
+                            <td>状态</td>
+                        </tr>
+                        <tr>
+                            <td>第1/1期</td>
+                            <td>1000.00</td>
+                            <td>50.00</td>
+                            <td class="theme_text">1050.00</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="f_gr">待还款</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+
+
+                <!--&lt;!&ndash;未登录&ndash;&gt;-->
+                <!--<div class="w-100 lh120 tc fz_16">-->
+                    <!--<div class="blank50"></div>-->
+                    <!--<div class="blank50"></div>-->
+                    <!--请 <a href="" class="theme_text">登录</a> 或 <a href="" class="theme_text">注册</a> 后查看-->
+                <!--</div>-->
+
             </div>
         </div>
 
@@ -657,6 +718,12 @@
         <div class="blank20"></div>
     </div>
 
+</div>
+
+<div class="modal fade p0" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="ps" style="top: 0; bottom: 0; right: 0; left: 0;width: 500px;height: 500px;">
+        <img src="" alt="">
+    </div>
 </div>
 
 
@@ -885,6 +952,113 @@
 
     <!-- 底部 -->
 
+
+</div>
+<script type="text/javascript">
+
+
+    function checkedpackets() {
+        if ($('.checked_packets')[0]) {
+            var packets = $('.checked_packets')[0]
+            var earnnum = count_earn()
+            var packets_text = $(packets).find('.fz_50').text()
+            var packets_val = $(packets).find('.packets_idVal').text()
+            var packets_id = $(packets).find('.packets_idName').text()
+            $('.add_sign').removeClass('hide_dis')
+            if (packets_id === 'ecvId') {
+                $('.packets_name').text(packets_text + '元红包')
+
+                $('.adds').text(packets_text)
+            } else {
+                $('.packets_name').text(packets_text + '加息')
+                var inter_num = count_interest()
+                $('.adds').text(inter_num)
+            }
+            $('.packets_subId').attr('name', packets_id)
+            $('.packets_subId').val(packets_val)
+        }
+    }
+
+    function  uncheckpackets() {
+        $('.packets_name').text('可用')
+        $('.add_sign').addClass('hide_dis')
+        $('.adds').text('')
+    }
+
+    function count_earn() {
+        var money = $('#invest_money').val()
+        var interest = 0.1
+        var days = 15
+        var earn = ((money * interest) / 365 * 15).toFixed(2)
+        return earn
+    }
+    
+    function  count_interest() {
+        var money = $('#invest_money').val()
+        var interest = 0.02
+        var days = 15
+        var earn = ((money * interest) / 365 * 15).toFixed(2)
+        return earn
+    }
+
+    //红包使用条件的比对
+    function check_Money_days() {
+        var money = $('#invest_money').val()
+        var tar_days = $('.tar_days').text()
+
+        $.map($('.packets_item'),function(n){
+            console.log( $(n).find('span.moneys').text())
+            var days = $(n).find('span.days').text()
+            var mon_num = $(n).find('span.moneys').text()
+            if(Number(mon_num) <= Number(money) && tar_days >= days) {
+                return $(n).addClass('red_packets').removeClass('unuse_packets')
+            } else {
+                return $(n).addClass('unuse_packets').removeClass('red_packets')
+            }
+        })
+    }
+
+    function red_packets_num() {
+        var packets_num = $('.red_packets').length;
+        $('.packets_name').text(packets_num+'张可用')
+        return packets_num;
+    }
+
+    $(function(){
+        check_Money_days();
+        red_packets_num();
+
+        $('#invest_money').bind('input propertychange', function() {
+            var earns = count_earn()
+            $('.earns').text(earns)
+            checkedpackets()
+            check_Money_days()
+            red_packets_num()
+        });
+
+
+        $('.packets_item').click(function () {
+
+            if ($(this).hasClass('red_packets')) {
+                $('.checked_packets').removeClass('checked_packets').addClass('red_packets')
+                $(this).removeClass('red_packets').addClass('checked_packets')
+                checkedpackets($(this))
+            } else if ($(this).hasClass('checked_packets')) {
+                // $('packets_item').removeClass('checked_packets')
+                $(this).removeClass('checked_packets').addClass('red_packets')
+                uncheckpackets($(this))
+            }
+        })
+
+        $('img').click(function () {
+            $('#imgModal').modal('show')
+            $('#imgModal img').attr('src', $(this).attr('src'))
+        })
+
+    })
+
+
+</script>
 
 </body>
 </html>

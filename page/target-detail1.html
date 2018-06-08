@@ -1,0 +1,646 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="renderer" content="webkit">
+    <meta name="Generator"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>标的详情 - 满宝金服</title>
+    <meta name="keywords"
+          content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融"/>
+    <meta name="description"
+          content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet"
+          href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/target-detail/target-detail.css">
+
+    <script src="../js/util/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script
+            src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <script type="text/javascript">
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "M+": this.getMonth() + 1,                 //月份
+                "d+": this.getDate(),                    //日
+                "h+": this.getHours(),                   //小时
+                "m+": this.getMinutes(),                 //分
+                "s+": this.getSeconds(),                 //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds()             //毫秒
+            };
+            if (/(y+)/.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+            for (var k in o) {
+                if (new RegExp("(" + k + ")").test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            }
+            return fmt;
+        }
+
+    </script>
+    <!--表单验证-->
+    <script>
+        jQuery.validator.addMethod("isMoney", function (value, element) {
+            var length = value.length;
+            return this.optional(element) || (value % 50 === 0);
+        }, "请正确填写您的投资金额")
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("提交事件!");
+            }
+        });
+        $().ready(function () {
+// 在键盘按下并释放及提交后验证提交表单
+            $("#signupForm").validate({
+                rules: {
+                    money: {
+                        required: true,
+                        min: 100,
+                        isMoney: true
+                    },
+                    agree: "required"
+                },
+                messages: {
+                    money: {
+                        required: "请输入投资金额",
+                        min: "投资金额不能小于100",
+                        isMoney: "请正确填写您的投资金额"
+                    },
+                    agree: "请先同意我们的声明"
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<!-- 头部 -->
+<%@ include file="../../header.jsp"%>
+
+
+<!-- 详细描述 -->
+<div class="bg_box">
+    <div class="wrap clearfloat">
+        <!-- 标的头部 -->
+        <div class="target_intro col-sm-12 bf_fff p0">
+            <div class="intro_left col-sm-8 p0  pb28">
+                <div class="blank30"></div>
+                <div class="intro_head clearfloat">
+                    <div class="target_title col-sm-12">
+                        <div class="target_name col-sm-6">
+                            <span class="fz_18 f_333">${syDeal.name }</span>
+                            <c:if test="${syDeal.isNew }">
+                                <span class="new_privilege newcomer_text newcomer_border">新手专享</span>
+                            </c:if>
+                            <span class="invest_reward newcomer_text newcomer_border">投资奖励</span>
+                        </div>
+                        <div class="col-sm-6 tr fz_14 f_999">借款编号#${syDeal.dealSn }
+                        </div>
+                    </div>
+                    <div class="blank20"></div>
+                    <div class="target_shownum col-sm-12">
+                        <div class="col-sm-6">
+                            <div class="fz_40 theme_text">${syDeal.rate }%</div>
+                            <div class="blank15"></div>
+                            <div class="fz_16 f_999">预计年化收益</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
+                                <span class="fz_40 theme_text"
+                                      style="vertical-align: bottom">${syDeal.repayTime }</span>
+                                <span class="fz_18 f_999" style="vertical-align: bottom">天</span>
+                            </div>
+                            <div class="blank15"></div>
+                            <div class="fz_16 f_999">投资期限</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blank20"></div>
+                <div class="bte3 mr15 ml15"></div>
+                <div class="blank20"></div>
+
+                <div class="intro_body clearfloat">
+                    <div class="col-sm-12">
+                        <div class="left col-sm-6">
+                            <div class="item">
+                                <span class="fz_14 f_999">项目金额：</span> <span
+                                    class="fz_14 f_333">${syDeal.borrowAmount }元</span>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                            <div class="item">
+                                <span class="fz_14 f_999">剩余可投：</span> <span
+                                    class="fz_14 f_333">${syDeal.borrowAmount-syDeal.loadMoney }元</span>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                            <div class="item">
+                                <span class="fz_14 f_999">还款方式：</span> <span
+                                    class="fz_14 f_333">${syDeal.repayType }</span>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                            <div class="item">
+                                <span class="fz_14 f_999">起息时间：</span> <span
+                                    class="fz_14 f_333">满标复审计息</span>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                        </div>
+                        <div class="left col-sm-6">
+                            <div class="item">
+                                <span class="fz_14 f_999">起投金额：</span> <span
+                                    class="fz_14 f_333">${syDeal.minLoanMoney }元起投</span>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                            <div class="item">
+                                <span class="fz_14 f_999">单笔限购：</span> <span
+                                    class="fz_14 f_333">不限购</span>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                            <div class="item">
+                                <span class="fz_14 f_999">发标时间：</span> <span
+                                    class="fz_14 f_333 start_time"></span>
+                                <script type="text/javascript">
+                                    var date = (new Date(${syDeal.startTime*1000}).format("yyyy-MM-dd hh:mm:ss"))
+                                    $('.start_time').text(date);
+                                </script>
+                            </div>
+
+                            <div class="blank5"></div>
+
+                            <div class="item">
+                                <span class="fz_14 f_999">截止时间：</span> <span
+                                    class="fz_14 f_333 end_time"></span>
+                                <script type="text/javascript">
+                                    //开始时间+投标期限（天） 毫秒
+                                    var overdate = ${syDeal.startTime*1000+syDeal.enddate*86400000} -new Date().getTime()
+
+
+                                    var timer = setInterval(function () {
+                                        if (overdate <= 0) {
+                                            $('.end_time').text('已超时');
+                                            clearInterval(timer);
+                                            return
+                                        }
+                                        overdate -= 1000
+                                        dateDif(overdate, 'end_time')
+                                    }, 1000)
+
+                                    //当前时间毫秒
+                                    function dateDif(enddate, id) {
+                                        var date = enddate;
+                                        var days = date / 1000 / 60 / 60 / 24;
+                                        var daysRound = Math.floor(days);
+                                        var hours = date / 1000 / 60 / 60 - (24 * daysRound);
+                                        var hoursRound = Math.floor(hours);
+                                        var minutes = date / 1000 / 60 - (24 * 60 * daysRound) - (60 * hoursRound);
+                                        var minutesRound = Math.floor(minutes);
+                                        var seconds = date / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound);
+                                        var secondsRound = Math.floor(seconds);
+                                        var time = (daysRound + "天" + hoursRound + "时" + minutesRound + "分" + secondsRound + "秒");
+
+                                        $('.end_time').text(time)
+                                    }
+
+
+                                </script>
+                            </div>
+
+                            <div class="blank5"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12">
+                        <span class="fz_14 f_999 f_l pl15">募集进度：</span>
+                        <div class="progress w500 mt10">
+                            <div class="progress-bar"
+                                 style="width: ${100 - syDeal.loadMoney / syDeal.borrowAmount * 100 }%; background: #eee; float: right"></div>
+                        </div>
+                        <span class="pl15 fz_14 f_999">${syDeal.loadMoney / syDeal.borrowAmount * 100 }%</span>
+                    </div>
+                </div>
+
+            </div>
+            <c:if test="${user != null}">
+
+
+                <form class="cmxform" id="signupForm" method="post" action="index.html">
+
+                    <input name="dealId" value=${syDeal.id} hidden="hidden">
+                    <div class="intro_right col-sm-4 bg_f9f9f9 fz_14 p0">
+                        <div class="blank30"></div>
+                        <div class="tc pr">
+                            <div class="fz_16 f_333 pr50">可用余额（元）</div>
+                            <a href="${pageContext.request.contextPath}/webpayment/recharge"><span
+                                    class="f_r f_white theme_bg bdr5 p_0_5 recharge lh20">充值</span></a>
+                        </div>
+                        <div class="blank30"></div>
+                        <c:if test="${money == 0 || money == null }">
+                            <div class="fz_36 theme_text tc">0.0</div>
+                        </c:if>
+                        <div class="fz_36 theme_text tc">${money }</div>
+                        <div class="blank30"></div>
+                        <div class="form-group col-sm-12">
+                            <label for="invest_money" class="f_999 col-sm-4 mt5 pr5 tr">投资金额：</label>
+                            <div class=" col-sm-7 pl5 pr">
+                                <input type="text" class="ui-input form-control" name="money" id="invest_money"
+                                       placeholder="100起投 50倍数">
+                                <div class="error_msg hide_dis ps">输入有误</div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="blank20"></div>
+                        <div class="pr col-sm-12">
+
+                            <div class="col-sm-4 tr f_999 pr5">优惠券：</div>
+                            <div class="col-sm-6 pl5 packets_name">${youhuigeshu }张可用</div>
+                            <input type="text" class="hide packets_subId">
+                            <span
+                                    class="f_r theme_text theme_border bdr5 p_0_5 recharge lh20"
+                                    data-toggle="modal" data-target="#myModal">选择</span>
+                            <!-- 红包模态框 -->
+                            <div class="modal fade p0" id="myModal" tabindex="-1"
+                                 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="blank50"></div>
+                                <div class="blank50"></div>
+                                <div class="w950 bf_fff">
+                                    <!-- 分类头部 -->
+                                    <ul class="nav nav-tabs bd0 tc pr">
+                                        <li class="active w180"><a href="#red_reward"
+                                                                   data-toggle="tab"> 红包（<span>${countHongbao }</span>）
+                                        </a></li>
+                                        <li class="w180"><a href="#raise_reward"
+                                                            data-toggle="tab"> 加息券（<span>${countJiaxi }</span>）
+                                        </a></li>
+                                        <div data-dismiss="modal" aria-label="Close" class="ps w21 close_btn">
+                                            <!--<span aria-hidden="true"></span>-->
+                                            <img src="../images/icon/close.png" alt="" class="w-100">
+                                        </div>
+
+                                    </ul>
+
+
+                                    <!-- 分类内容 -->
+                                    <div class="tab-content">
+                                        <!-- 红包 -->
+                                        <div class="tab-pane fade in active" id="red_reward">
+                                            <div class="clearfloat p_5_35">
+                                                <div class="col-sm-12 h360" style="overflow: auto;">
+                                                    <c:forEach items="${listHongbao}" var="hongbao">
+                                                        <div class="col-sm-4 packets_item red_packets fz_14">
+                                                            <div>
+                                                                <div class="hide packets_idName">ecvId</div>
+                                                                <div class="hide packets_idVal">${hongbao.id }</div>
+                                                                <div class="blank10"></div>
+                                                                <div class="pl20">
+                                                                    <c:if test="${hongbao.type ==0 }">
+                                                                        新手红包
+                                                                    </c:if>
+                                                                    <c:if test="${hongbao.type ==1 }">
+                                                                        普通红包
+                                                                    </c:if>
+                                                                </div>
+                                                                <div class="blank10"></div>
+                                                                <div class="fz_24 tc">
+                                                                    ￥ <span class="fz_50">${hongbao.value }</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fz_12 lh16 p_15_20">
+                                                                <div>仅限购买≥${hongbao.beiyong2 }天项目</div>
+                                                                <div>购买金额≥${hongbao.xzMoney }使用</div>
+                                                                <div class="youxiaoqi">有效期至:
+                                                                    <fmt:formatDate type="both" dateStyle="medium"
+                                                                                    timeStyle="medium"
+                                                                                    value="${hongbao.endDate }"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </c:forEach>
+                                                </div>
+                                            </div>
+
+                                            <!-- 分页 -->
+                                            <div class="pagenation_container f_r">
+                                                <p id="testPage_reward1" style="height: 28px;"></p>
+                                            </div>
+                                            <div class="blank20"></div>
+                                        </div>
+
+                                        <!-- 加息券 -->
+                                        <div class="tab-pane fade" id="raise_reward">
+                                            <div class="clearfloat p_5_35">
+                                                <div class="col-sm-12 h360" style="overflow: auto;">
+                                                    <c:forEach items="${listJiaxi }" var="jiaxi">
+                                                        <div class="col-sm-4  packets_item unuse_packets">
+                                                            <div>
+                                                                <div class="blank10"></div>
+                                                                <div class="pl20">新手加息券</div>
+                                                                <div class="blank10"></div>
+                                                                <div class="fz_24 tc">
+                                                                    <span class="fz_50">${jiaxi.value }%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fz_12 lh16 p_15_20">
+                                                                <div>仅限购买≥${jiaxi.beiyong2 }天项目</div>
+                                                                <div>购买金额≥${jiaxi.xzMoney }使用</div>
+                                                                <div class="youxiaoqi">有效期至:
+                                                                    <fmt:formatDate type="both" dateStyle="medium"
+                                                                                    timeStyle="medium"
+                                                                                    value="${jiaxi.endDate }"/>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </c:forEach>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 红包加息券的选择 -->
+                                    <script type="text/javascript">
+
+                                        $('.packets_item').click(function () {
+
+                                            if ($(this).hasClass('red_packets')) {
+                                                $('.checked_packets').removeClass('checked_packets').addClass('red_packets')
+                                                $(this).removeClass('red_packets').addClass('checked_packets')
+//                                                var packets_text = $(this).find('.fz_50').text()
+//                                                var packets_val = $(this).find('.packets_idVal').text()
+//                                                var packets_id = $(this).find('.packets_idName').text()
+//                                                $('.packets_name').text(packets_text + '元红包')
+//                                                $('.packets_subId').attr('name', packets_id)
+//                                                $('.packets_subId').val(packets_val)
+                                            } else if ($(this).hasClass('checked_packets')) {
+                                                // $('packets_item').removeClass('checked_packets')
+                                                $(this).removeClass('checked_packets').addClass('red_packets')
+                                            }
+                                            checkpackets($(this))
+                                        })
+
+                                        function checkpackets(packets) {
+                                            if ($('.checked_packets')[0]) {
+                                                console.log(packets)
+                                                var packets_text = $(this).find('.fz_50').text()
+                                                var packets_val = $(this).find('.packets_idVal').text()
+                                                var packets_id = $(this).find('.packets_idName').text()
+                                                console.log(packets_text)
+                                                console.log(packets_val)
+                                                console.log(packets_id)
+
+                                                $('.packets_name').text(packets_text + '元红包')
+                                                $('.packets_subId').attr('name', packets_id)
+                                                $('.packets_subId').val(packets_val)
+                                            } else {
+                                                return
+                                            }
+                                        }
+
+                                    </script>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blank15"></div>
+                        <div class="pr col-sm-12">
+                            <div class="col-sm-4 tr f_999 pr5">预计收益：</div>
+                            <div class="col-sm-7 pl5">
+                                <span class="f_ef5950">10.00 + 2.00 &nbsp;</span><span
+                                    class="f_999"> 元</span>
+                            </div>
+                        </div>
+                        <div class="fz_12 col-sm-offset-2">
+                            <input type="checkbox" class="theme_text" checked="checked" id="checkAgree" name="agree">
+                            <label for="checkAgree">
+                                我已阅读并同意 <a href="" class="second_theme_text">《风险告知书》</a>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="submit" value="确认投资"
+                                   class="btn col-sm-offset-2 col-sm-8 fz_18 theme_bg f_white">
+                        </div>
+
+                    </div>
+                </form>
+            </c:if>
+            <c:if test="${user == null}">
+                <div class="intro_right col-sm-4 bg_f9f9f9 p0 fz_14 pb28 pr15">
+                    <div class="blank30"></div>
+                    <div class="tc pr">
+                        <div class="fz_16 f_333 pr50">可用余额（元）</div>
+                    </div>
+                    <div class="blank30"></div>
+                    <div class="fz_20 theme_text tc">未登录</div>
+                    <div class="blank30"></div>
+                    <div class="form-group col-sm-12">
+                        <label for="exampleInputName2" class="f_999 col-sm-4 mt5 pr5 tr">投资金额：</label>
+                        <input type="text" style="width:58%" class="form-control col-sm-8 pl5"
+                               id="exampleInputName2" placeholder="100起投 50倍数">
+                    </div>
+                    <div class="blank20"></div>
+                    <div class="pr col-sm-12">
+                        <div class="col-sm-4 tr f_999 pr5">优惠券：</div>
+                        <div class="col-sm-8 pl5">未登录</div>
+                    </div>
+                    <div class="blank15"></div>
+                    <div class="pr col-sm-12">
+                        <div class="col-sm-4 tr f_999 pr5">预计收益：</div>
+                        <div class="col-sm-8 pl5">
+                            <span class="f_ef5950">0.00</span><span class="f_999"> 元</span>
+                        </div>
+                    </div>
+                    <div class="checkbox tc fz_12">
+                        <label> <input type="checkbox" class="mt7 theme_text" checked="checked">
+                            我已阅读并同意 <a href="" class="second_theme_text">《风险告知书》</a>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit"
+                                class="btn col-sm-offset-2 col-sm-8 fz_18 theme_bg f_white">立即投资
+                        </button>
+                    </div>
+                </div>
+            </c:if>
+        </div>
+
+        <div class="blank20"></div>
+        <div class="blank10"></div>
+        <!-- 标的详细内容 -->
+        <div class="bf_fff">
+            <ul id="target_detail_tab" class="nav nav-tabs">
+                <li class="active"><a href="#base_msg" data-toggle="tab">项目信息</a>
+                </li>
+                <li><a href="#danger_control" data-toggle="tab">风险控制</a></li>
+                <li><a href="#send_log" data-toggle="tab">投标记录</a></li>
+                <li><a href="#back_log" data-toggle="tab">还款记录</a></li>
+            </ul>
+            <!-- 标签内容 -->
+            <div id="myTabContent" class="tab-content">
+                <!-- 项目信息 -->
+                <div class="tab-pane fade in active pl30 pr30" id="base_msg">
+                    <div class="blank30"></div>
+                    <!-- 项目简介 -->
+                    <div>
+                        <div class="msg_hd theme_text">
+                            <div class="box-t  f16">
+                                <i class="iconfont pr10"></i>&nbsp;项目简介
+                            </div>
+                        </div>
+                        <div class="blank5"></div>
+                        <div class="bte5"></div>
+                        <div class="blank15"></div>
+                        <div class="box-bd fz_14 f_999 t_in4">${syDeal.description }
+                        </div>
+                    </div>
+                    <div class="blank30"></div>
+                    <!-- 借款合同 -->
+                    <div>
+                        <div class="msg_hd theme_text">
+                            <div class="box-t  f16">
+                                <i class="iconfont pr10"></i>&nbsp;借款合同
+                            </div>
+                        </div>
+                        <div class="blank30"></div>
+                        <div class="box-bd clearfloat">
+                            <ul id="mortgage_contract">
+                                <!--  <li class="f_l mr10 bdd">
+                                <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda3468b93c_800x800.jpg" rel="lightbox-myMor" title="合同A1">
+                                    <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda3468b93c_100x100.jpg" style="height: 100px" title="合同A1" alt="合同A1">
+                                </a>
+                            </li> -->
+                                <li class="f_l mr10 bdd">${syDeal.mortgageContract }</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blank30"></div>
+                    <!-- 抵押物 -->
+                    <div>
+                        <div class="msg_hd theme_text">
+                            <div class="box-t  f16">
+                                <i class="iconfont pr10"></i>&nbsp;抵押物
+                            </div>
+                        </div>
+                        <div class="blank30"></div>
+                        <div class="box-bd clearfloat">
+                            <ul id="mortgage_infos">
+                                <!--  <li class="f_l mr10 bdd">
+                                <a href="https://www.zjmb158.com/public/attachment/201804/11/13/5acda38734652_800x800.jpg" rel="lightbox-myMor" title="汽车1">
+                                    <img src="https://www.zjmb158.com/public/attachment/201804/11/13/5acda38734652_100x100.jpg" style="height: 100px" title="汽车1" alt="汽车1">
+                                </a>
+                            </li> -->
+                                <li>${syDeal.mortgageInfos }</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blank30"></div>
+                    <div class="blank30"></div>
+                </div>
+
+                <!-- 风险控制 -->
+                <div class="tab-pane fade pl30 pr30" id="danger_control">
+                    <div class="blank30"></div>
+                    <div class="msg_hd theme_text">
+                        <div class="box-t  f16">
+                            <i class="iconfont pr10"></i>&nbsp;风险控制
+                        </div>
+                    </div>
+                    <div class="blank5"></div>
+                    <div class="bte5"></div>
+                    <div class="blank15"></div>
+
+                    <div class="box-bd fz_14 f_999 t_in4">
+                        <p class="f_333 t_in3">
+                            <b>风控措施</b>
+                        </p>
+                        ${syDeal.riskSecurity }
+                    </div>
+
+                </div>
+
+                <!-- 投标记录 -->
+                <div class="tab-pane fade pl30 pr30 f_333 fz_14" id="send_log">
+                    <table class="table tc">
+                        <!-- <caption>Optional table caption.</caption> -->
+                        <thead>
+                        <tr class="tc">
+                            <th class="tc"></th>
+                            <th>序号</th>
+                            <th class="tc">投资人</th>
+                            <th class="tc">投资金额</th>
+                            <th class="tc">投资时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${dealLoads}" var="dealLoad">
+                            <tr>
+                                <th class="tr"><img
+                                        src="../images/target-detail/first_invest.png"></th>
+                                <td class="tl">1</td>
+                                <td>${dealLoad.userName }</td>
+                                <td class="theme_text">${dealLoad.money }</td>
+                                <td>${dealLoad.msg }</td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 还款记录 -->
+                <div class="tab-pane fade pl30 pr30" id="back_log"></div>
+            </div>
+        </div>
+
+        <div class="blank20"></div>
+        <div class="blank20"></div>
+        <div class="blank20"></div>
+    </div>
+</div>
+
+
+<!-- 底部 -->
+<%@ include file="../../footer.jsp"%>
+
+<!-- 底部 -->
+
+</body>
+</html>

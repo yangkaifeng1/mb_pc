@@ -7,27 +7,150 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="renderer" content="webkit" />
+    <meta name="renderer" content="webkit"/>
     <meta name="Generator"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>会员注册 - 满宝金服</title>
-    <meta name="keywords" content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融" />
-    <meta name="description" content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
+    <meta name="keywords" content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融"/>
+    <meta name="description"
+          content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
 
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->      
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" >
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="../css/index.css" >
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/log_reg/log_reg.css">
 
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+
+    <script type="text/javascript">
+        <!--手机号码验证-->
+        jQuery.validator.addMethod("checkMobile", function (value, element) {
+            var length = value.length;
+            var mobile = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+
+            return this.optional(element) || (length === 11 && mobile.test(value));
+        }, "请正确填写您的手机号码");
+
+        jQuery.validator.addMethod("weakpwd", function (value, element) {
+            var low_reg1 = /^[0-9]{6,16}$/;
+            var low_reg2 = /^[A-Za-z]{6,16}$/;
+            return this.optional(element) || ( !low_reg1.test(value) && !low_reg2.test(value));
+        }, "您的密码有点简单哦");
+
+        <!--登录表单-->
+        $().ready(function () {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#login_form").validate({
+                rules: {
+                    mobile: {
+                        required: true,
+                        minlength: 11,
+                        maxlength: 11,
+                        digits: true,
+                        number: true,
+                        checkMobile: true
+                    },
+                    userPwd: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 16
+                    },
+                    indefinite_code: "required",
+                },
+                messages: {
+                    mobile: {
+                        required: "不能为空",
+                        minlength: "必须11位数字",
+                        maxlength: "必须11位数字",
+                        digits: "必须是数字",
+                        number: "请输入有效数字",
+                        checkMobile: "手机号格式错误"
+                    },
+                    userPwd: {
+                        required: "不能为空",
+                        minlength: "必须不少于6位",
+                        maxlength: "必须不大于16位"
+                    },
+                    indefinite_code: "不能为空"
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                },
+            });
+        });
+
+        <!--注册表单-->
+        $().ready(function () {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#reg_form").validate({
+                rules: {
+                    mobile: {
+                        required: true,
+                        minlength: 11,
+                        maxlength: 11,
+                        digits: true,
+                        number: true,
+                        checkMobile: true,
+                        remote:{
+                            type:"POST",
+                            url:"01.php", //请求地址
+                            data:{
+                                username:function(){ return $("#username").val(); }
+                            }
+                        }
+                    },
+                    userPwd: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 16,
+                        weakpwd: true
+                    },
+                    indefinite_code: "required",
+                    code: "required",
+                    agree: "required"
+                },
+                messages: {
+                    mobile: {
+                        required: "不能为空",
+                        minlength: "必须11位数字",
+                        maxlength: "必须11位数字",
+                        digits: "必须是数字",
+                        number: "请输入有效数字",
+                        checkMobile: "手机号格式错误",
+                        romote: "该手机号已注册"
+                    },
+                    userPwd: {
+                        required: "不能为空",
+                        minlength: "必须不少于6位",
+                        maxlength: "必须不大于16位",
+                        weakpwd: "您的密码有点简单哦"
+                    },
+                    indefinite_code: "不能为空",
+                    code: "不能为空",
+                    agree: "你需要同意《满宝金服注册协议》"
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                }
+            });
+        });
+
+
+    </script>
 
 </head>
 <body>
@@ -76,13 +199,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <li class="top_li caiji_a"><a href="">帮助中心</a></li>
                     <li class="top_li caiji_a"><a href="">消息中心</a></li>
                     <li class=" top_li relative caiji_a">
-                       <span class="glyphicon glyphicon-phone" style="color: #acacac;"></span><a href="">满宝金服APP</a>
-                       <i class="iconfont">
-                           <img src="../images/index/wechat.png">
-                       </i>
-                       <i class="iconfont">
-                           <img src="../images/index/weibo.png">
-                       </i>
+                        <span class="glyphicon glyphicon-phone" style="color: #acacac;"></span><a href="">满宝金服APP</a>
+                        <i class="iconfont">
+                            <img src="../images/index/wechat.png">
+                        </i>
+                        <i class="iconfont">
+                            <img src="../images/index/weibo.png">
+                        </i>
                     </li>
                 </ul>
             </div>
@@ -102,7 +225,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li><a href="#">首页</a></li>
                 <li><a href="#">我要投资</a></li>
                 <li><a href="#">积分商城</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user mr5" ></span>账号中心</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user mr5"></span>账号中心</a></li>
 
 
             </ul>
@@ -114,144 +237,142 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- 登录注册模块 -->
 <div class="form_container">
     <div class="wrap clearfloat">
-      <div class="form_box">
-        <div class="blank20"></div>
-        <ul id="target_detail_tab" class="nav nav-pills tc fz_22">
-            <li class="active col-sm-5 col-sm-offset-1">
-                <a href="#login" data-toggle="tab">登录</a>
-            </li>
-            <li class="col-sm-5">
-              <a href="#register" data-toggle="tab">注册</a>
-            </li>
-        </ul>
-        <div class="blank20"></div>
-        <div id="myTabContent" class="tab-content">
-          <!-- 登录tab -->
-          <div id="login" class="tab-pane fade in active">
-            <!-- 登录表单 -->
-            <form class="login_form">
-                <!-- 手机号码框 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb15 col-sm-offset-1">
-                    <span  class="glyphicon glyphicon-phone input_icon"></span>
-                    <input type="text" class="form-control" id="login_inputPhone" name="login_mobile" placeholder="请输入手机号码" aria-describedby="helpBlock2">
-                  </div>
-                </div>
-                <!-- 密码框 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb15 col-sm-offset-1">
-                    <span  class="glyphicon glyphicon-lock input_icon"></span>
-                    <input type="password" name="login_userPwd" class="form-control login_password_con" id="login_inputPassword" placeholder="请填写登录密码">
-                    <span class="glyphicon glyphicon-eye-close password_eye"></span>
-                  </div>
-                </div>
-                <!-- 动态验证码 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb10 col-sm-offset-1">
-                    <span  class="glyphicon glyphicon-picture input_icon"></span>
-                    <input type="text" class="col-sm-5 form-control" id="inputCode" placeholder="动态验证码" name="login_indefinite_code">
-                    <img class="col-sm-4 btn get_code theme_text fz_16 bf_fff bd0 " >
-                  </div>
-                </div>
+        <div class="form_box">
+            <div class="blank20"></div>
+            <ul id="target_detail_tab" class="nav nav-pills tc fz_22">
+                <li class="active col-sm-5 col-sm-offset-1">
+                    <a href="#log" data-toggle="tab">登录</a>
+                </li>
+                <li class="blc h20 mt13"></li>
+                <li class="col-sm-5">
+                    <a href="#reg" data-toggle="tab">注册</a>
+                </li>
+            </ul>
+            <div class="blank20"></div>
+            <div id="myTabContent" class="tab-content">
+                <!-- 登录tab -->
+                <div id="log" class="tab-pane fade in active">
+                    <!-- 登录表单 -->
+                    <form class="login_form" id="login_form">
+                        <!-- 手机号码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb15 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-phone input_icon"></span>
+                                <input type="text" class="form-control" id="login_inputPhone" name="mobile"
+                                       placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <!-- 密码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb15 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-lock input_icon"></span>
+                                <input type="password" name="userPwd" class="form-control login_password_con"
+                                       id="login_inputPassword" placeholder="请填写登录密码">
+                                <span class="glyphicon glyphicon-eye-close password_eye"></span>
+                            </div>
+                        </div>
+                        <!-- 动态验证码 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-picture input_icon"></span>
+                                <input type="text" class="col-sm-5 form-control" id="inputCode1" placeholder="动态验证码"
+                                       name="indefinite_code">
+                                <img class="col-sm-4 btn get_code theme_text fz_16 bf_fff bd0 ">
+                            </div>
+                        </div>
 
 
-                <!-- 记住用户名&忘记密码 -->
-                <div class="col-sm-offset-1 col-sm-10 fz_12 f_999 mb10">
-                  <label>
-                    <input type="checkbox"> 记住用户名
-                  </label>
-                  <a><span class="f_r">忘记密码？</span></a>
+                        <!-- 记住用户名&忘记密码 -->
+                        <div class="col-sm-offset-1 col-sm-10 fz_12 f_999 mb10">
+                            <label>
+                                <input type="checkbox"> 记住用户名
+                            </label>
+                            <a><span class="f_r">忘记密码？</span></a>
+                        </div>
+
+                        <!-- 提交注册 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-offset-1 col-sm-10 mb10">
+                                <input type="submit" class="col-sm-12 btn log_submit_btn theme_bg f_white" value="登录">
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
-                <!-- 提交注册 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-offset-1 col-sm-10  input_box mb10">
-                    <button type="submit" class="col-sm-12 btn log_submit_btn theme_bg f_white" disabled>登录</button>
-                  </div>
-                </div>
-            </form>
-          </div>
-
-          <!-- 注册tab -->
-          <div id="register" class="tab-pane fade">
-            <!-- 注册表单 -->
-            <form class="reg_form">
-                <!-- 手机号码框 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb10 col-sm-offset-1" >
-                    <span  class="glyphicon glyphicon-phone input_icon"></span>
-                    <input type="text" class="form-control" id="inputPhone" name="mobile" placeholder="手机号" aria-describedby="helpBlock2">
-                    <span class="success_msg">
-                      <span class="glyphicon glyphicon-ok left_icon mr10"></span>可注册
-                    </span>
-                    <span class="err_msg">
-                      <span class="glyphicon glyphicon-remove left_icon mr10"></span>输入不正确
-                    </span>
-                    <span class="had_msg">
-                      <span class="glyphicon glyphicon-remove left_icon mr10"></span>号码已注册
-                    </span>
-                  </div>
-                </div>
-                <!-- 密码框 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb10 col-sm-offset-1">
-                    <span  class="glyphicon glyphicon-lock input_icon"></span>
-                    <input type="password" name="userPwd" class="form-control password_con" id="inputPassword" placeholder="输入长度6~16的密码">
-                    <span class="glyphicon glyphicon-eye-close password_eye"></span>
-                    <div class="progress progress_box pwd_strong" style="">
-                      <div class="progress-bar progress-bar-danger hide_progress" style="width: 33%">弱</div>
-                      <div class="progress-bar progress-bar-warning hide_progress" style="width: 33%">中</div>
-                      <div class="progress-bar progress-bar-success hide_progress" style="width: 34%">强</div>
-                    </div>
-                    <span class="err_msg">
-                      <span class="glyphicon glyphicon-remove left_icon mr10"></span>密码长度太短或太长
-                    </span>
-                  </div>
-                </div>
-                <!-- 动态验证码 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb10 col-sm-offset-1">
-                    <span  class="glyphicon glyphicon-picture input_icon"></span>
-                    <input type="text" class="col-sm-5 form-control" id="inputCode" placeholder="动态验证码" name="indefinite_code">
-                    <img class="col-sm-4 btn get_code theme_text fz_16 bf_fff bd0 " >
-                  </div>
-                </div>
+                <!-- 注册tab -->
+                <div id="reg" class="tab-pane fade">
+                    <!-- 注册表单 -->
+                    <form class="reg_form" id="reg_form">
+                        <!-- 手机号码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-phone input_icon"></span>
+                                <input type="text" class="form-control" id="inputPhone" name="mobile" placeholder="手机号"
+                                       aria-describedby="helpBlock2">
+                            </div>
+                        </div>
+                        <!-- 密码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-lock input_icon"></span>
+                                <input type="password" name="userPwd" class="form-control password_con"
+                                       id="inputPassword" placeholder="输入长度6~16的密码">
+                                <span class="password_eye hide_pwd"></span>
+                            </div>
+                        </div>
+                        <!-- 动态验证码 -->
+                        <div class="form-inline clear clearfloat mb15">
+                            <div class=" col-sm-10 input_box mb10 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-picture input_icon"></span>
+                                <input type="text" class="form-control w-60" id="inputCode2" placeholder="动态验证码"
+                                       name="indefinite_code">
+                                <input type="text" class="form-control w-30 f_r">
+                                <!--<img class=" btn get_code theme_text fz_16 bf_fff bd0 ">-->
+                            </div>
+                        </div>
 
 
-                <!-- 手机验证码 -->
-                <!-- <div class="form-group clear clearfloat">
-                  <div class="col-sm-10 input_box mb10 col-sm-offset-1">
-                    <input type="text" class="col-sm-5 form-control" id="inputCode" placeholder="输入验证码" name="code">
-                    <input type="button" class="col-sm-4 btn get_code theme_text fz_16 bf_fff bd0 " value="获取验证码" disabled>
-                  </div>
-                </div> -->
+                        <!-- 手机验证码 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <span class="glyphicon glyphicon-user input_icon"></span>
+                                <input type="text" class="col-sm-5 form-control" id="inputCode" placeholder="输入验证码"
+                                       name="code">
+                                <div class="col-sm-4 get_code theme_text fz_14 bf_fff bd0 tr">获取验证码</div>
+                            </div>
+                        </div>
 
-                <!-- 填写推荐人 -->
-                <div class="form-group clear clearfloat">
-                  <label for="recommand" class="col-sm-offset-1 col-sm-3 control-label show_input">填写推荐人</label>
-                  <div class="col-sm-10 hide_input col-sm-offset-1 recom_box input_box">
-                    <span  class="glyphicon glyphicon-user input_icon"></span>
-                    <input type="password" class="form-control" id="recommand" placeholder="请填写推荐人" name="recommand">
-                  </div>
-                </div>
+                        <!-- 填写推荐人 -->
+                        <div class="form-group clear clearfloat">
+                            <label for="recommand"
+                                   class="col-sm-offset-1 col-sm-3 control-label show_input">填写推荐人</label>
+                            <div class="col-sm-10 hide_input col-sm-offset-1 recom_box input_box">
+                                <span class="glyphicon glyphicon-user input_icon"></span>
+                                <input type="password" class="form-control" id="recommand" placeholder="请填写推荐人"
+                                       name="recommand">
+                            </div>
+                        </div>
 
-                <!-- 提交注册 -->
-                <div class="form-group clear clearfloat">
-                  <div class="col-sm-offset-1 col-sm-10  input_box">
-                    <button type="submit" class="col-sm-12 btn theme_bg reg_submit_btn f_white" disabled>注册</button>
-                  </div>
-                  <div class="col-sm-offset-1 col-sm-10 fz_12 f_999">
-                    <label>
-                      <input type="checkbox" class="register_paper"> 注册即同意  
-                      <a href="about.html#register">《满宝金服注册协议》</a>
-                    </label>
-                  </div>
+                        <!-- 提交注册 -->
+
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <input type="submit" class="col-sm-12 btn theme_bg reg_submit_btn f_white tc"
+                                       value="注册">
+                            </div>
+                            <div class="blank15"></div>
+                            <div class="col-sm-offset-1 col-sm-10 fz_12 f_999">
+                                <label>
+                                    <input type="checkbox" class="register_paper" name="agree" checked> 注册即同意
+                                    <a href="about.html#register">《满宝金服注册协议》</a>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-          </div>
+            </div>
+
         </div>
-        
-      </div>
 
 
     </div>
@@ -260,15 +381,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!-- 底部 -->
 <style type="text/css">
-  .f_box{
-    margin: 28px 0;
-  }
-  .footer_hot{
-    margin: 28px 0 0 0;
-  }
-  .footer_hotp1, .footer_hotp2{
-    padding-bottom: 25px;
-  }
+    .f_box {
+        margin: 28px 0;
+    }
+
+    .footer_hot {
+        margin: 28px 0 0 0;
+    }
+
+    .footer_hotp1, .footer_hotp2 {
+        padding-bottom: 25px;
+    }
 </style>
 
 <div id="ftw">
@@ -479,235 +602,62 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div id="gotop"></div>
     </div>
-
+</div>
 <!-- 底部 -->
 
 
 <script type="text/javascript">
 
-  $(function(){
+    $(function () {
 
-    // 判断显示登录还是注册
-
-    var id = window.location.hash
-    console.log(id)
-    if (id !== '') {
-        $('div.collapse').removeClass('in')
-        $('.nav li').removeClass('active')
-        $("[href="+id+"]").tab('show');
-        console.log($("[href="+id+"]").parents('div.collapse').addClass('in'))
-    }   
-
-
-
-    var phone_state = false
-    var password_state = false
-    // 手机号码注册框内容检查
-    $('#inputPhone').bind('input propertychange', function(){
-      var val = $('#inputPhone').val()
-      phone_state = check('phone', val)
-      console.log(phone_state)
-      if (phone_state === 1) {
-        console.log($(this).siblings())
-        $(this).nextAll().hide()
-        $(this).siblings('.had_msg').show()
-        $('.get_code').attr('disabled', 'true')
-      } else if (phone_state) {
-        $(this).nextAll().hide()
-        $(this).siblings('.success_msg').show()
-        $('.get_code').removeAttr('disabled')
-      } else {
-        $(this).nextAll().hide()
-        $(this).siblings('.err_msg').show()
-        $('.get_code').attr('disabled', 'true')
-      }
-    })
-    // 显示推荐人输入框
-    $('.show_input').click(function(){
-      $(this).toggle()
-      $(this).siblings('.recom_box').toggle()
-    })
-    // 执行获取验证码及时
-    $('.get_code').click(function() {
-      setTimer(60, $(this))
-    })
-    // 密码可视控制
-    $('.password_eye').click(function() {
-      if ($(this).hasClass('glyphicon-eye-open')) {
-        $(this).removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close')
-        $(this).siblings('input').attr('type', 'password')
-      } else {
-        $(this).removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open')
-        $(this).siblings('input').attr('type', 'text')
-      }
-    })
-
-    // 注册密码框内容检查
-    $('.password_con').bind('input propertychange',function() {
-      var val = $(this).val()
-      var res = check("password", val)
-      if (res === 1) {
-        $(this).siblings('.progress').removeClass('progress_box')
-        $(this).siblings('.progress').children().hide()
-        $(this).siblings('.err_msg').hide()
-        $(this).siblings('.progress').children('.progress-bar-danger').show()
-      } else if (res === 2) {
-        $(this).siblings('.progress').removeClass('progress_box')
-        $(this).siblings('.progress').children().hide()
-        $(this).siblings('.err_msg').hide()
-        $(this).siblings('.progress').children('.progress-bar-danger').show()
-        $(this).siblings('.progress').children('.progress-bar-warning').show()
-        password_state = true
-      } else if (res === 3) {
-        $(this).siblings('.progress').removeClass('progress_box')
-        $(this).siblings('.progress').children().hide()
-        $(this).siblings('.err_msg').hide()
-        $(this).siblings('.progress').children('.progress-bar-danger').show()
-        $(this).siblings('.progress').children('.progress-bar-warning').show()
-        $(this).siblings('.progress').children('.progress-bar-success').show()
-        password_state = true
-      } else {
-        $(this).siblings('.progress').addClass('progress_box')
-        $(this).siblings('.err_msg').show()
-      }
-      
-    })
-
-    // 注册协议检查
-    var agreestate = $('.register_paper').prop("checked")
-    console.log(agreestate)
-    $('.register_paper').click(function() {
-      agreestate = $('.register_paper').prop("checked")
-      console.log(agreestate)
-    })
-
-    // 注册表单提交按钮状态检查 
-    $('.reg_form').bind('input propertychange',function(){
-      if (password_state) {
-        $('.reg_submit_btn').removeAttr('disabled')
-      } else {
-        $('.reg_submit_btn').attr('disabled', 'true')
-      }
-    })
-
-    // 登录框状态变量
-    var login_phone_state = false
-    var login_password_state = false
-
-    // 登录手机号码框检查
-    $('#login_inputPhone').bind('input propertychange',function(){
-      if ($(this).val() !== "") {
-        login_phone_state = true
-      } else {
-        login_phone_state = false
-      }
-    })
-    // 登录密码框检查
-    $('#login_inputPassword').bind('input propertychange',function(){
-      if ($(this).val() !== "") {
-        login_password_state = true
-      } else {
-        login_password_state = false
-      }
-    })
-
-    // 登录表单提交按钮检查
-    $('.login_form').bind('input propertychange',function(){
-
-      if (login_phone_state && login_password_state) {
-        $('.log_submit_btn').removeAttr('disabled')
-      } else {
-        $('.log_submit_btn').attr('disabled', 'true')
-      }
-    })
-
-
-  })
- 
-
-  // 检查输入内容
-  function check(type, val) {
-    // 手机号码验证正则
-    var phone_reg = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/
-
-    // 密码验证正则
-    // 弱
-    var low_reg1 = /^[0-9]{6,16}$/
-    var low_reg2 = /^[A-Za-z]{6,16}$/
-    // 中
-    var mid_reg1 = /^[0-9A-Za-z]{6,16}$/
-    var mid_reg2 = /(?!.*[\u4E00-\u9FA5\s])(?!^[a-zA-Z]+$)^.{6,10}$/
-    var mid_reg3 = /^(?!.*[\u4E00-\u9FA5\s])(?!^[\d]+$)^.{6,10}$/
-
-
-    // 强
-    var str_reg = /^(?=.*((?=[\x21-\x7e]+)[^A-Za-z0-9]))(?=.*[a-zA-Z])(?=.*[0-9])[^\u4e00-\u9fa5]{10,16}$/
-    if (type === "phone") {
-      if (phone_reg.test(val)) {
-        var state = leave(val)
-        if (state === 1) {
-          return 1
+        // 判断显示登录还是注册
+        var id = window.location.hash
+        console.log(id)
+        if (id !== '') {
+            $('#target_detail_tab li').removeClass('active')
+            $("[href='#reg']").tab('show');
+            $("[href='#reg']").parents('li').addClass('active')
         }
-        return true
-      } else {
-        return false
-      }
-    }
 
-    if (type === "password") {
-      if (low_reg1.test(val) || low_reg2.test(val)) {
-        console.log(1)
-        return 1
-      } else if (mid_reg1.test(val) || mid_reg2.test(val) || mid_reg3.test(val)){
-        console.log(2)
-        return 2
-      } else if (str_reg.test(val)) {
-        console.log(3)
-        return 3
-      } else {
-        console.log(4)
-        return 4
-      }
-    }
+        // 显示推荐人输入框
+        $('.show_input').click(function () {
+            $(this).toggle()
+            $(this).siblings('.recom_box').toggle()
+        })
 
-  }
+        // 执行获取验证码计时
+        $('.get_code').click(function () {
+            setTimer(60, $(this))
+        })
 
-  //获取验证码计时器 
-  function setTimer(num, el) {
-    var timer = setInterval(function(){
-      console.log(num)
-      num --;
-      el.val(''+num+'s后重新获取')
-      el.attr('disabled', 'true')
-      if (num === 0) {
-        clearInterval(timer)
-        el.val('获取验证码')
-        el.removeAttr('disabled')
-      }
+        // 密码可视控制
+        $('.password_eye').click(function () {
+            if ($(this).hasClass('show_pwd')) {
+                $(this).removeClass('show_pwd').addClass('hide_pwd')
+                $(this).siblings('input').attr('type', 'password')
+            } else {
+                $(this).removeClass('hide_pwd').addClass('show_pwd')
+                $(this).siblings('input').attr('type', 'text')
+            }
+        })
 
-    },1000)
-  }
 
-  function leave(mobile){
-    var bool = 1
-    $.ajax({
-      async:false,
-      url:"/checkMobile",
-      type:"post",
-      data:{"mobile":mobile},
-      dataType:"json",
-      success:function(data){
-        if(data){
-          bool = 0;
-          return bool;
-        }else{
-          bool = 1;
-          return bool;
+        //获取验证码计时器
+        function setTimer(num, el) {
+            var timer = setInterval(function () {
+                console.log(num)
+                num--;
+                el.text('' + num + 's后重新获取')
+                el.addClass('cannot')
+                if (num === 0) {
+                    clearInterval(timer)
+                    el.text('获取验证码')
+                    el.removeClass('cannot')
+                }
+
+            }, 1000)
         }
-      }
     })
-    return bool;
-  }
 
 </script>
 

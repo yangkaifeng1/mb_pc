@@ -1,0 +1,537 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="renderer" content="webkit"/>
+    <meta name="Generator"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>会员注册 - 满宝金服</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/images/icon/favicon.png" type="/image/x-icon">
+    <meta name="keywords"
+          content="满宝,满宝金服,汽车质押公司,p2p网贷平台,汽车金融,p2p理财排名,个人理财产品,理财投资,杭州借款平台,可靠理财平台,房产质押借款,互联网金融"/>
+    <meta name="description"
+          content="满宝,满宝金服是国内专业的p2p网贷平台和投资理财平台,注册资金5800万, 公司秉承“大众创业、万众创新”的经营理念，以风险控制为核心，通过多方位的风控尽调及风险数据分析模型，实现完整的风险控制闭环，为有贷款需求和理财需求的客户提供专业、可靠的金融服务，帮助他们实现财富梦想。"/>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet"
+          href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/log_reg/log_reg.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script
+            src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+
+    <script
+            src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script
+            src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <script
+            src="../js/util/util.js"></script>
+
+
+    <script type="text/javascript">
+        <!--手机号码验证-->
+        jQuery.validator.addMethod("checkMobile", function (value, element) {
+            var length = value.length;
+            var mobile = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+
+            return this.optional(element) || (length === 11 && mobile.test(value));
+        }, "请正确填写您的手机号码");
+
+        jQuery.validator.addMethod("weakpwd", function (value, element) {
+            var low_reg1 = /^[0-9]{6,16}$/;
+            var low_reg2 = /^[A-Za-z]{6,16}$/;
+            return this.optional(element) || ( !low_reg1.test(value) && !low_reg2.test(value));
+        }, "您的密码有点简单哦");
+
+        jQuery.validator.addMethod("checkcode", function (value, element) {
+            var deferred = $.Deferred();//创建一个延迟对象
+            $.ajax({
+                url: "${pageContext.request.contextPath}/webuser/checkMsgCode",
+                async: false,//要指定不能异步,必须等待后台服务校验完成再执行后续代码
+                dataType: "json",
+                data: {"msgCode": value, "mobile": $('#inputPhone').val()},
+                success: function (page) {
+                    if (page.result > 0) {
+                        deferred.reject();
+                    } else {
+                        deferred.resolve();
+                    }
+                }
+            });
+            return deferred.state() == "resolved" ? false : true;
+        }, "验证码错误");
+
+        /* if($('#inputPhone').valid()){
+         $('#hide_input').removeClass("hide_dis")
+         } */
+
+
+
+        <!--登录表单-->
+        $().ready(function () {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#login_form").validate({
+                rules: {
+                    mobile: {
+                        required: true,
+                        minlength: 11,
+                        maxlength: 11,
+                        digits: true,
+                        number: true,
+                        checkMobile: true
+                    },
+                    userPwd: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 16
+                    },
+                    /*  vrifyCode: {
+                     required: true,
+                     remote:{
+                     type:"POST",
+                     url:"${pageContext.request.contextPath}/imgvrifyControllerDefaultKaptcha", //请求地址
+                     data:{
+                     vrifyCode:function(){
+                     return $("#inputCode1").val();
+                     }
+                     }
+                     }
+                     }, */
+                },
+                messages: {
+                    mobile: {
+                        required: "不能为空",
+                        minlength: "必须11位数字",
+                        maxlength: "必须11位数字",
+                        digits: "必须是数字",
+                        number: "请输入有效数字",
+                        checkMobile: "手机号格式错误"
+                    },
+                    userPwd: {
+                        required: "不能为空",
+                        minlength: "必须不少于6位",
+                        maxlength: "必须不大于16位"
+                    },
+                    /* vrifyCode:{
+                     required: "不能为空",
+                     romote: "验证码错误"
+                     }, */
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        type: "POST",
+                        url: "${pageContext.request.contextPath}/webuser/login",
+                        type: "post",
+                        //data:{"mobile":mobile,"userPwd":psd},
+                        data: $('#login_form').serialize(),
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data)
+                            if (data.msg) {
+                                //alert("登陆成功！");
+                                window.location = "${pageContext.request.contextPath}/";
+                                console.log(data)
+                            } else {
+                                alert("账号或密码错误！")
+                            }
+                            ;
+                        },
+                        error: function () {
+                            alert("异常！");
+                        }
+
+                    })
+
+                },
+            });
+        });
+
+        <!--注册表单-->
+        $().ready(function () {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#reg_form").validate({
+                rules: {
+                    mobile: {
+                        required: true,
+                        minlength: 11,
+                        maxlength: 11,
+                        digits: true,
+                        number: true,
+                        checkMobile: true,
+                        remote: {
+                            type: "POST",
+                            url: "${pageContext.request.contextPath}/webuser/checkMobile", //请求地址
+                            data: {
+                                mobile: function () {
+                                    return $("#inputPhone").val();
+                                }
+                            }
+                        }
+                    },
+                    userPwd: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 16,
+                        weakpwd: true
+                    },
+                    confirm_userPwd: {
+                        required: true,
+                        equalTo: "#inputPassword"
+                    },
+                    /* vrifyCode: {
+                     required: true,
+                     remote:{
+                     type:"POST",
+                     url:"${pageContext.request.contextPath}/imgvrifyControllerDefaultKaptcha", //请求地址
+                     data:{
+                     vrifyCode:function(){
+                     return $("#inputCode2").val();
+                     }
+                     }
+                     }
+                     }, */
+                    msgCode: {
+                        required: true,
+                        checkcode: true
+                    },
+                    agree: "required"
+                },
+                messages: {
+                    mobile: {
+                        required: "不能为空",
+                        minlength: "必须11位数字",
+                        maxlength: "必须11位数字",
+                        digits: "必须是数字",
+                        number: "请输入有效数字",
+                        checkMobile: "手机号格式错误",
+                        remote: "该手机号已注册"
+                    },
+                    userPwd: {
+                        required: "不能为空",
+                        minlength: "必须不少于6位",
+                        maxlength: "必须不大于16位",
+                        weakpwd: "您的密码有点简单哦"
+                    },
+                    confirm_userPwd: {
+                        required: "请输入密码",
+                        equalTo: "两次密码输入不一致"
+                    },
+                    /* vrifyCode: {
+                     required: "不能为空",
+                     romote: "验证码错误"
+                     }, */
+                    msgCode: {
+                        required: "不能为空",
+                        checkcode: "验证码错误"
+                    },
+                    agree: "你需要同意《满宝金服注册协议》"
+                },
+                submitHandler: function (form) {
+                    form.submit()
+                }
+            });
+        });
+
+
+    </script>
+
+</head>
+<body>
+<!-- 头部 -->
+<%@ include file="header.jsp"%>
+<input hidden="hidden" id="type" value=${type }>
+<!-- 登录注册模块 -->
+<div class="form_container">
+    <div class="wrap clearfloat">
+        <div class="form_box">
+            <div class="blank20"></div>
+            <ul id="target_detail_tab" class="nav nav-pills tc fz_22">
+                <li class="active col-sm-5 col-sm-offset-1 login_tab"><a
+                        href="#log" data-toggle="tab">登录</a></li>
+                <li class="blc h20 mt13"></li>
+                <li class="col-sm-5 register_tab"><a href="#reg"
+                                                     data-toggle="tab">注册</a></li>
+            </ul>
+            <div class="blank20"></div>
+            <div id="myTabContent" class="tab-content">
+                <!-- 登录tab -->
+                <div id="log" class="tab-pane fade in active">
+                    <!-- 登录表单 -->
+                    <!--  <form class="login_form" method="post" > -->
+                    <!-- 手机号码框 -->
+                    <!-- 登录表单 -->
+                    <form class="login_form" id="login_form">
+                        <!-- 手机号码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb15 col-sm-offset-1">
+                                <img src="../images/log_reg/phone-icon.png" alt="" class="input_icon">
+                                <input type="text" class="form-control" id="login_inputPhone"
+                                       name="mobile" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <!-- 密码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb15 col-sm-offset-1">
+                                <img src="../images/log_reg/pwd-icon.png" alt="" class="input_icon">
+                                <input type="password" name="userPwd" class="form-control login_password_con"
+                                       id="login_inputPassword" placeholder="请填写登录密码">
+                                <span class="password_eye hide_pwd"></span>
+                            </div>
+                        </div>
+                        <!-- 动态验证码 -->
+                        <!--<div class="form-group clear clearfloat">-->
+                        <!--<div class="col-sm-10 input_box mb10 col-sm-offset-1">-->
+                        <!--<span class="glyphicon glyphicon-picture input_icon"></span> <input-->
+                        <!--type="text" class="col-sm-5 form-control" id="inputCode1"-->
+                        <!--placeholder="动态验证码" name="vrifyCode"> <img alt="验证码"-->
+                        <!--class="col-sm-4 btn get_code theme_text fz_16 bf_fff bd0 "-->
+                        <!--id="logImg"-->
+                        <!--onclick="this.src='${pageContext.request.contextPath}/defaultKaptcha?d='+new Date()*1"-->
+                        <!--src="${pageContext.request.contextPath}/defaultKaptcha" />-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="blank10"></div>
+
+                        <!-- 记住用户名&忘记密码 -->
+                        <div class="col-sm-offset-1 col-sm-10 fz_12 f_999 mb10">
+                            <label> <input type="checkbox"> 记住用户名
+                            </label> <a
+                                href="${pageContext.request.contextPath}/webuser/toResetPassword"><span
+                                class="f_r">忘记密码？</span></a>
+                        </div>
+
+
+                        <!-- 提交登录 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-offset-1 col-sm-10 mb10">
+                                <input type="submit"
+                                       class="col-sm-12 btn log_submit_btn theme_bg f_white h40"
+                                       value="登录">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 注册tab -->
+                <div id="reg" class="tab-pane fade">
+                    <!-- 注册表单 -->
+                    <form class="reg_form" id="reg_form"
+                          action="${pageContext.request.contextPath}/webuser/reg?code=${code}"
+                          method="post">
+                        <!-- 手机号码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <img src="../images/log_reg/phone-icon.png" alt="" class="input_icon">
+                                <input type="text" class="form-control" id="inputPhone" name="mobile"
+                                        placeholder="手机号" aria-describedby="helpBlock2">
+                            </div>
+                        </div>
+                        <!-- 密码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <img src="../images/log_reg/pwd-icon.png" alt="" class="input_icon">
+                                <input type="password" name="userPwd"
+                                    class="form-control password_con" id="inputPassword"
+                                    placeholder="输入长度6~16的密码">
+                                <span class="password_eye hide_pwd"></span>
+
+                            </div>
+                        </div>
+
+                        <!-- 重复密码框 -->
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <img src="../images/log_reg/pwd-icon.png" alt="" class="input_icon">
+                                <input type="password" name="confirm_userPwd"
+                                    class="form-control password_con" id="confirm_inputPassword"
+                                    placeholder="输入长度6~16的密码">
+                                <span class="password_eye hide_pwd"></span>
+
+                            </div>
+                        </div>
+                        <!-- 动态验证码 -->
+                        <!--<div class="form-inline clear clearfloat mb15">-->
+                        <!--<div class=" col-sm-10 input_box mb10 col-sm-offset-1">-->
+                        <!--<span class="glyphicon glyphicon-picture input_icon"></span> <input-->
+                        <!--type="text" class="form-control w-60" id="inputCode2"-->
+                        <!--placeholder="动态验证码" name="vrifyCode">-->
+                        <!--&lt;!&ndash; <input type="text" class="form-control w-30 f_r"> &ndash;&gt;-->
+                        <!--<img alt="验证码"-->
+                        <!--class="col-sm-4 btn get_code theme_text fz_16 bf_fff bd0 "-->
+                        <!--onclick="this.src='${pageContext.request.contextPath}/defaultKaptcha?d='+new Date()*1"-->
+                        <!--src="${pageContext.request.contextPath}/defaultKaptcha" />-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+
+                        <!-- 手机验证码 -->
+                        <div class="form-group clear clearfloat" id="hide_input">
+                            <div class="col-sm-10 input_box mb10 col-sm-offset-1">
+                                <img src="../images/log_reg/msgcode-icon.png" alt="" class="input_icon" style="top: 5px;">
+                                <input type="text" class="col-sm-5 form-control" id="inputCode"
+                                    placeholder="输入验证码" name="msgCode">
+                                <div
+                                        class="col-sm-4 get_code sms_code theme_text fz_14 bf_fff bd0 tr">获取验证码
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 推荐人id -->
+                        <input hidden="hidden" value=${ctid } name="ctid"/>
+                        <!-- 填写推荐人 -->
+                        <c:if test="${ctid == '' || ctid == null}">
+                            <div class="form-group clear clearfloat">
+                                <label for="recommand"
+                                       class="col-sm-offset-1 col-sm-6 control-label show_input">填写推荐人</label>
+                                <div
+                                        class="col-sm-10 hide_input col-sm-offset-1 recom_box input_box">
+                                    <img src="../images/log_reg/rec-icon.png" alt="" class="input_icon"> <input
+                                        type="text" class="form-control" id="recommand"
+                                        placeholder="请填写推荐人" name="referer">
+                                </div>
+                            </div>
+                        </c:if>
+                        <!-- 提交注册 -->
+
+                        <div class="form-group clear clearfloat">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <input type="submit"
+                                       class="col-sm-12 btn theme_bg reg_submit_btn f_white tc h40"
+                                       value="注册">
+                            </div>
+                            <div class="blank15"></div>
+                            <div class="col-sm-offset-1 col-sm-10 fz_12 f_999">
+                                <label> <input type="checkbox" class="register_paper"
+                                               name="agree" checked> 注册即同意 <a
+                                        href="${pageContext.request.contextPath}/toAbout#register">《满宝金服注册协议》</a>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<!-- 底部 -->
+<%@ include file="footer.jsp"%>
+
+<!-- 底部 -->
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        // 判断显示登录还是注册
+        var id = getUrl("type")
+        console.log(id)
+        if (id) {
+            /*  $('div.collapse').removeClass('in')
+             $('.nav li').removeClass('active')
+             $("[href=" + id + "]").tab('show');
+             console.log($("[href=" + id + "]").parents('div.collapse').addClass('in'))
+             $('#target_detail_tab li').removeClass('active')
+             console.log($("[href=" + id + "]")) */
+            $('#target_detail_tab li').removeClass('active')
+            $("[href=" + "#" + id + "]").tab('show');
+            $("[href=" + "#" + id + "]").parents('li').addClass('active')
+        }
+
+        // 显示推荐人输入框
+        $('.show_input').click(function () {
+            $(this).toggle()
+            $(this).siblings('.recom_box').toggle()
+        })
+        // 执行获取验证码计时
+        $('.sms_code').click(function () {
+            var that = this
+            if ($('#inputPhone').valid()) {
+                if ($('.sms_code').hasClass('cannot')) {
+                    return;
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "${pageContext.request.contextPath}/webuser/getMsgCode",
+                        type: "post",
+                        //data:{"mobile":mobile,"userPwd":psd},
+                        data: $('#reg_form').serialize(),
+                        dataType: "json",
+                        success: function (data) {
+                            //console.log(data)
+                            if (data.statusCode == 200) {
+                                setTimer(60, $(that))
+                            } else {
+                                alert("获取验证码失败！")
+                            }
+                            ;
+                        },
+                        error: function () {
+                            alert("异常！");
+                        }
+                    })
+                }
+            } else {
+                return
+            }
+
+
+        })
+
+
+        // 密码可视控制
+        $('.password_eye').click(function () {
+            if ($(this).hasClass('show_pwd')) {
+                $(this).removeClass('show_pwd').addClass('hide_pwd')
+                $(this).siblings('input').attr('type', 'password')
+            } else {
+                $(this).removeClass('hide_pwd').addClass('show_pwd')
+                $(this).siblings('input').attr('type', 'text')
+            }
+        })
+
+        //获取验证码计时器
+        function setTimer(num, el) {
+
+            var timer = setInterval(function () {
+                num--;
+                el.text('' + num + 's后重新获取')
+                el.addClass('cannot')
+                if (num === 0) {
+                    clearInterval(timer)
+                    el.text('获取验证码')
+                    el.removeClass('cannot')
+                }
+
+            }, 1000)
+        }
+    })
+
+</script>
+</body>
+</html>

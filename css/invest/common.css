@@ -5,10 +5,10 @@ img { border: 0; }
 a { color: #444; text-decoration: none; }
 .container { width: 1200px; margin: 0 auto; font-size: 14px;}
 .clearfix:after { content: " "; display: block; clear: both; }
-.filter {background: rgba(255, 255, 255, 0.8);margin-top: -60px;border-radius: 8px;}
-.filter dl { position: relative; margin: 30px 0;}
+.filter {background: rgba(255, 255, 255, 0.8);border-radius: 8px;}
+.filter dl { position: relative; margin: 10px 0;}
 .filter dl:after { content: ""; display: block; clear: both }
-.filter dl dt { position: absolute; top: 0; left: 0;}
+.filter dl dt { position: absolute; top: 0; left: 0; line-height: 3;}
 .filter dl dd { padding-left: 110px }
-.filter dl dd a { font-size: 14px;color: #999;padding: 5px 35px;margin: 5px 15px;text-align: center; }
-.filter dl dd a.on { background: #f5a52f; color: #fff; border-radius: 5px;}
+.filter dl dd a { font-size: 14px;color: #999;padding: 5px;margin: 5px 15px;display: inline-block; width: 120px; text-indent: 30px;}
+.filter dl dd a.on { background: #f5a52f; color: #fff; border-radius: 5px; text-align: center;text-indent: 0;}

@@ -63,7 +63,7 @@
                 <img src="../../../images/icon/triangle.png" alt="" class="ps" style="transform:rotate(90deg);left:60px;top:-14px;">
             </div>
             <div class="blank30"></div>
-            <form id="validateForm1" class="bgwh fz_14 f_666" novalidate="novalidate ">
+            <form id="validateForm1" class="bgwh fz_14 f_666" novalidate="novalidate "  action="index.html">
                 <div class="clearfix h58">
                     <label class="col-sm-offset-1 col-sm-2 tr lh40" for="nums1">充值金额：</label>
                     <div class="ovh col-sm-3 p0">
@@ -101,7 +101,7 @@
                 <div class="col-sm-offset-3 ">富友支付（支持多家银行）</div>
             </div>
             <div class="blank30"></div>
-            <form id="validateForm2" class="bgwh fz_14 f_666" novalidate="novalidate ">
+            <form id="validateForm2" class="bgwh fz_14 f_666" novalidate="novalidate "  action="index.html">
                 <div class="clearfix h58">
                     <label class="col-sm-offset-1 col-sm-2 tr lh40" for="nums2">充值金额：</label>
                     <div class="ovh col-sm-3 p0">
@@ -128,45 +128,6 @@
 
 
 <script>
-    new Validate($('#validateForm1'),
-        function() {
-            alert('全部验证通过');
-        },
-        {validate: [
-            {
-                id: 'nums1',
-                method: function (el) {
-                    if (el.val() % 50 !== 0) {
-                        return '必须是50的倍数'
-                    } else {
-                        console.log('yes')
-                    }
-                }
-            },
-            {
-                id: 'phone_code',
-                ignore: '验证码不能为空'
-            }
-        ]}
-    );
-
-    new Validate($('#validateForm2'),
-        function() {
-            alert('全部验证通过');
-        },
-        {validate: [
-            {
-                id: 'nums2',
-                method: function (el) {
-                    if (el.val() % 50 !== 0) {
-                        return '必须是50的倍数'
-                    } else {
-                        console.log('yes')
-                    }
-                }
-            }
-        ]}
-    );
 
 </script>
 

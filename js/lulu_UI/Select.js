@@ -4,7 +4,6 @@
     "function" == typeof require && require("common/ui/Enhance");
     var e = "ui-select", t = "ui-".replace(/[a-z]/gi, "");
     $.fn.selectMatch = function () {
-        console.log('11')
         return $(this).each(function () {
             var e = $(this);
             e.data("select") ? e.data("select").refresh() : new a(e)

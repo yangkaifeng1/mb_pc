@@ -251,6 +251,24 @@
         }
     })
 
+    <!-- 红包加息券的选择 -->
+
+    $('.packets_item').click(function () {
+        if ($(this).hasClass('red_packets')) {
+            $('.checked_packets').removeClass('checked_packets').addClass('red_packets')
+            $(this).removeClass('red_packets').addClass('checked_packets')
+            var packet_text = $(this).find('.fz_50').text()
+            var packets_id =  $(this).find('.packets_id').attr(name)
+            var packets_val=  $(this).find('.packets_id').val()
+            $('.packets_name').val(packet_text + '元红包')
+            $('.packets_subId').attr('name', packets_id)
+            $('.packets_subId').val(packets_val)
+        } else if ($(this).hasClass('checked_packets')) {
+            // $('packets_item').removeClass('checked_packets')
+            $(this).removeClass('checked_packets').addClass('red_packets')
+        }
+    })
+
 </script>
 </body>
 </html>

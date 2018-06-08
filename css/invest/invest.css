@@ -45,7 +45,8 @@
 .target_list .target_item{
 	background: #fff;
 	margin: 20px 0;
-	padding: 20px 0 10px;
+	padding: 30px 0 10px;
+	height: 195px;
 }
 
 .target_list .target_item .target_title h2{
@@ -65,18 +66,15 @@
 	font-size: 14px;
 }
 
-.target_item .target_con .target_earn .rate{
-	font-size: 60px;
-}
 
-.target_item .target_con .target_investable .investable_num, 
-.target_item .target_con .target_des .term_days,
-.target_item .target_con .target_des .target_money{
-	font-size: 18px;
-}
+/*.target_item .target_con .target_investable .investable_num, */
+/*.target_item .target_con .target_des .term_days,*/
+/*.target_item .target_con .target_des .target_money{*/
+	/*font-size: 18px;*/
+/*}*/
 
 .target_item .target_con .target_investable .progress{
-	width: 100%;
+	/*width: 100%;*/
 	margin-bottom: 0;
 }
 
